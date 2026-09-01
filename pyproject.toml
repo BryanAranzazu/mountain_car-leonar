@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mountain_car"
+version = "0.1.0"
+description = "Mountain Car: reinforcement learning agents for MountainCar-v0."
+readme = "README.md"
+license = { text = "Apache-2.0" }
+requires-python = ">=3.11 , <3.12"
+
+dependencies = [
+    "gymnasium[classic-control]>=1.2.3",
+    "numpy>=2.4.2",
+    "torch>=2.10.0",
+]
+
+[dependency-groups]
+dev = ["ruff>=0.15.5"]
+
+[project.scripts]
+mountaincar = "mountain_car.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mountain_car"]
+
+[tool.ruff.lint.per-file-ignores]
+# The exercise stubs hand the student some scaffolding (the mini-batch tensors)
+# that stays unused until they fill in the TODO, which would otherwise fail CI
+# on a fresh clone. Delete this section once the exercises are complete.
+"src/mountain_car/agents/dqn.py" = ["F841"]
