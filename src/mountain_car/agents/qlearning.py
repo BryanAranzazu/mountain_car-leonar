@@ -57,7 +57,9 @@ class QLearningAgent:
         Tip: np.digitize(value, edges) returns the index of the bin a value
         falls into. Tip: the key must be hashable, so build a tuple of ints.
         """
-        raise NotImplementedError("EXERCISE 1a: implement discretize()")
+        # np.digitize con los bordes interiores devuelve indices en [0, n_bins-1],
+        # asi que un valor fuera de rango cae en la celda extrema y no hace falta recortar.
+        return tuple(int(np.digitize(v, edges)) for v, edges in zip(obs, self._bins))
 
     def select_action(self, state: tuple, *, deterministic: bool = False) -> int:
         """EXERCISE 1b: epsilon-greedy action selection.
@@ -72,7 +74,9 @@ class QLearningAgent:
         Tip: self.q_table is a defaultdict, so indexing an unseen state is safe
         and returns a zero vector. Tip: np.argmax gives you the best action.
         """
-        raise NotImplementedError("EXERCISE 1b: implement select_action()")
+        if not deterministic and np.random.random() < self.epsilon:
+            return int(np.random.randint(self.n_actions))
+        return int(np.argmax(self.q_table[state]))
 
     def predict(self, obs: np.ndarray, *, deterministic: bool = True) -> tuple[int, None]:
         return self.select_action(self.discretize(obs), deterministic=deterministic), None
@@ -100,7 +104,12 @@ class QLearningAgent:
         Note that `terminated` is NOT the same as "the episode ended" -- see
         the training loop below for why that distinction matters here.
         """
-        raise NotImplementedError("EXERCISE 1c: implement the Q-Learning update")
+        if terminated:
+            target = reward
+        else:
+            target = reward + self.gamma * float(np.max(self.q_table[next_state]))
+        td_error = target - self.q_table[state][action]
+        self.q_table[state][action] += self.lr * td_error
 
     def train(self, total_episodes: int = 10_000, log_interval: int = 100) -> list[float]:
         env = gym.make(self.env_id)
