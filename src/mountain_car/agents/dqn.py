@@ -40,10 +40,16 @@ class QNetwork(nn.Module):
 
     def __init__(self, state_dim: int, action_dim: int, hidden: int = 128) -> None:
         super().__init__()
-        raise NotImplementedError("EXERCISE 2a: build the Q-network")
+        self.net = nn.Sequential(
+            nn.Linear(state_dim, hidden),
+            nn.ReLU(),
+            nn.Linear(hidden, hidden),
+            nn.ReLU(),
+            nn.Linear(hidden, action_dim),  # salida lineal: son valores Q, no probabilidades
+        )
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
-        raise NotImplementedError("EXERCISE 2a: implement forward()")
+        return self.net(x)
 
 
 # ── Replay buffer ────────────────────────────────────────────────────
@@ -197,16 +203,28 @@ class DQNAgent:
         #      Tip: zero_grad() -> backward() -> step(), in that order.
         #
         # Return the scalar loss value (.item()).
-        raise NotImplementedError("EXERCISE 2b: implement the DQN learning step")
+        current_q = self.q_net(states_t).gather(1, actions_t)  # (B, 1)
+
+        with torch.no_grad():
+            next_q = self.target_net(next_states_t).max(dim=1, keepdim=True).values  # (B, 1)
+            target_q = rewards_t + self.gamma * next_q * (1.0 - terminateds_t)
+
+        loss = self.loss_fn(current_q, target_q)
+        self.optimizer.zero_grad()
+        loss.backward()
+        self.optimizer.step()
+        return float(loss.item())
 
     # ── training loop ─────────────────────────────────────────────────
 
-    def train(self, total_episodes: int = 500, log_interval: int = 10) -> list[float]:
+    def train(self, total_episodes: int = 500, log_interval: int = 10, seed: int | None = None
+    ) -> list[float]:
         env = gym.make(self.env_id)
         rewards_history: list[float] = []
 
         for episode in range(1, total_episodes + 1):
-            obs, _ = env.reset()
+            # La semilla solo se pasa en el primer reset; los siguientes continuan el mismo generador.
+            obs, _ = env.reset(seed=seed if episode == 1 else None)
             total_reward = 0.0
             done = False
 

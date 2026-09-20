@@ -111,12 +111,14 @@ class QLearningAgent:
         td_error = target - self.q_table[state][action]
         self.q_table[state][action] += self.lr * td_error
 
-    def train(self, total_episodes: int = 10_000, log_interval: int = 100) -> list[float]:
+    def train(self, total_episodes: int = 10_000, log_interval: int = 100, seed: int | None = None
+    ) -> list[float]:
         env = gym.make(self.env_id)
         rewards_history: list[float] = []
 
         for episode in range(1, total_episodes + 1):
-            obs, _ = env.reset()
+            # La semilla solo se pasa en el primer reset; los siguientes continuan el mismo generador.
+            obs, _ = env.reset(seed=seed if episode == 1 else None)
             state = self.discretize(obs)
             total_reward = 0.0
             done = False
