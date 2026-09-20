@@ -1,10 +1,25 @@
 # MountainCar-v0 con Q-Learning tabular y DQN
 
-Taller 1 de la Unidad 2, curso Simulación y Aprendizaje por Refuerzo (Maestría en Inteligencia Artificial, Universidad de La Sabana, 2026-5).
+[![CI](https://github.com/<mi-usuario>/mountain_car/actions/workflows/ci.yml/badge.svg)](https://github.com/<mi-usuario>/mountain_car/actions/workflows/ci.yml)
+[![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](.python-version)
+[![Licencia Apache 2.0](https://img.shields.io/badge/licencia-Apache%202.0-green.svg)](LICENSE)
+[![Citar este trabajo](https://img.shields.io/badge/citar-CITATION.cff-orange.svg)](CITATION.cff)
 
-Autor: Leonar Socarrás Molina. Repositorio base: [emiliomunozai/mountain_car](https://github.com/emiliomunozai/mountain_car), del profesor Emilio Muñoz.
+**Exploración persistente en un entorno de recompensa plana.** Taller 1 de la Unidad 2, curso Simulación y Aprendizaje por Refuerzo, Maestría en Inteligencia Artificial, Universidad de La Sabana (Chía, Colombia), periodo 2026-5.
 
-Cloné el repositorio del curso, completé los tres ejercicios que venían como plantillas vacías (`EXERCISES.md`), entrené los dos agentes con semilla fija y dejé aquí el código, los registros y las curvas. El resultado en una línea: con 100 episodios de evaluación sin exploración, Q-Learning tabular obtuvo una recompensa media de **-123.0** y DQN de **-96.7**.
+Autor: Leonar Socarrás Molina (leonarsomo@unisabana.edu.co). Docente: Emilio Muñoz Pérez. Repositorio base: [emiliomunozai/mountain_car](https://github.com/emiliomunozai/mountain_car).
+
+## Resumen
+
+Comparo dos agentes de aprendizaje por refuerzo en MountainCar-v0: Q-Learning tabular sobre una rejilla de 20 × 20 y una Deep Q-Network (DQN) sobre la observación continua. Ambos se entrenaron con semilla fija y se evaluaron en 100 episodios sin exploración, con semillas distintas de las usadas para entrenar y para escoger el punto de control. El agente tabular obtuvo una recompensa media de -123.0 (bandera en 98 de 100 episodios) y DQN de -96.7 (100 de 100), con cerca de nueve veces menos interacción con el entorno. El hallazgo de mayor interés está en la exploración. Con el epsilon-greedy de libro, DQN no aprende nada: en 300 episodios de acciones uniformes la bandera se alcanzó 0 veces, y una red que solo ve recompensas de -1 concluye, con razón, que ninguna acción importa. Sostener la acción exploratoria durante unos 20 pasos (Dabney et al., 2020) resuelve el problema sin tocar la regla de aprendizaje, lo que es legítimo porque Q-learning es off-policy.
+
+**Abstract.** I compare tabular Q-Learning (20 × 20 grid) and a Deep Q-Network on MountainCar-v0 under a fixed-seed protocol with held-out evaluation seeds. Over 100 greedy episodes the tabular agent scores -123.0 (flag reached in 98/100) and DQN scores -96.7 (100/100) using about nine times fewer environment steps. The main finding concerns exploration: with textbook epsilon-greedy, uniform random actions reached the flag 0 times in 300 episodes, so DQN correctly learns that no action matters. Holding each exploratory action for about 20 steps (temporally extended epsilon-greedy) fixes this without changing the learning rule.
+
+**Palabras clave:** aprendizaje por refuerzo, Q-learning, DQN, exploración, recompensa plana, reproducibilidad.
+
+### Resultados principales
+
+Cloné el repositorio del curso, completé los tres ejercicios que venían como plantillas vacías (`EXERCISES.md`), entrené los dos agentes y dejé aquí el código, los registros y las curvas.
 
 | | Q-Learning tabular | DQN |
 |---|---:|---:|
@@ -26,7 +41,9 @@ Cloné el repositorio del curso, completé los tres ejercicios que venían como 
 7. [Comparación](#7-comparación-y-estrategia-elegida)
 8. [Estructura del repositorio](#8-estructura-del-repositorio)
 9. [Declaración de uso de IA](#9-declaración-de-uso-de-ia)
-10. [Referencias](#referencias)
+10. [Cómo citar](#10-cómo-citar)
+11. [Licencia y agradecimientos](#11-licencia-y-agradecimientos)
+12. [Referencias](#referencias)
 
 ## 1. El problema como proceso de decisión
 
@@ -63,7 +80,13 @@ uv run mountaincar load dqn --eval
 uv run mountaincar render dqn --episodes 3   # abre una ventana gráfica
 ```
 
-Reproducir el experimento completo desde cero (misma semilla, 7):
+Comprobar que todo funciona (unos segundos):
+
+```bash
+make pruebas        # o: uv run pytest -q
+```
+
+Reproducir el experimento completo desde cero (misma semilla, 7). `make reproducir` ejecuta las cuatro órdenes en orden:
 
 ```bash
 uv run python scripts/diagnostico_exploracion.py                                  # unos 40 s
@@ -72,7 +95,7 @@ OMP_NUM_THREADS=1 uv run python scripts/experimento.py dqn --episodes 2500 --chu
 uv run --with matplotlib python scripts/graficar.py
 ```
 
-`OMP_NUM_THREADS=1` hace falta. La red es tan pequeña que repartir cada multiplicación entre varios hilos cuesta más que hacerla; en mi máquina, sin esa variable el entrenamiento de DQN avanzaba a unos 20 episodios por minuto y con ella a unos 180.
+`OMP_NUM_THREADS=1` hace falta. La red es tan pequeña que repartir cada multiplicación entre varios hilos cuesta más que hacerla; en la máquina de la corrida reportada (CPU de 2 núcleos), sin esa variable el entrenamiento de DQN avanzaba a unos 20 episodios por minuto y con ella a unos 180.
 
 También sirve la CLI original (`uv run mountaincar train qlearning --episodes 20000`), con una diferencia: guarda el agente tal como queda en el último episodio. En la sección 5 muestro por qué eso importa.
 
@@ -121,7 +144,7 @@ El objetivo sale de la red congelada y sin gradiente. Zhao (2025) explica la raz
 
 Con los ejercicios 2a y 2b correctos, DQN se quedó clavado en -200. Antes de tocar nada, medí.
 
-*El código de aprendizaje estaba bien.* El mismo agente, con epsilon-greedy de libro, pasa en CartPole-v1 de una recompensa media de 19.8 a 157.4 en 200 episodios (`resultados/dqn_cartpole_control.txt`), así que el problema era propio de MountainCar.
+*El código de aprendizaje estaba bien.* El mismo agente, con epsilon-greedy de libro, pasa en CartPole-v1 de una recompensa media de 19.8 a 157.4 en 200 episodios (`resultados/registros/dqn_cartpole_control.txt`), así que el problema era propio de MountainCar.
 
 *La exploración uniforme nunca ve la bandera.* `scripts/diagnostico_exploracion.py` juega 300 episodios con acciones al azar y cuenta cuántos terminan. Varié la probabilidad de repetir la acción anterior:
 
@@ -136,7 +159,7 @@ Con los ejercicios 2a y 2b correctos, DQN se quedó clavado en -200. Antes de to
 
 Con sorteo independiente en cada paso, la racha media de una misma acción es de paso y medio. El carro necesita empujes sostenidos de unos veinte pasos, y la probabilidad de sacar veinte veces seguidas la misma acción entre tres es (1/3)^20, del orden de 3 en 10 000 millones. No se trata de mala suerte. Esa conducta queda fuera de lo que el sorteo uniforme puede producir.
 
-*La red aprendió bien lo que vio.* Entrené 500 episodios con `explore_repeat=0.0`, que reproduce el epsilon-greedy de libro: 0 banderas en 500 episodios, con 100 000 transiciones en memoria (`resultados/dqn_sin_correccion.txt`). Si todas las transiciones valen -1 y ninguna termina, todas las acciones valen lo mismo en todos los estados. La red aprendió que nada de lo que hace importa, y con esos datos tenía razón. El fallo estaba aguas arriba del aprendizaje, en la recolección de datos.
+*La red aprendió bien lo que vio.* Entrené 500 episodios con `explore_repeat=0.0`, que reproduce el epsilon-greedy de libro: 0 banderas en 500 episodios, con 100 000 transiciones en memoria (`resultados/registros/dqn_sin_correccion.txt`). Si todas las transiciones valen -1 y ninguna termina, todas las acciones valen lo mismo en todos los estados. La red aprendió que nada de lo que hace importa, y con esos datos tenía razón. El fallo estaba aguas arriba del aprendizaje, en la recolección de datos.
 
 Queda por explicar por qué la tabla sí aprende con el mismo epsilon-greedy. Mi lectura es que la salvan los ceros optimistas de 3.1, que la empujan de forma sistemática hacia celdas no visitadas. La red no tiene ese mecanismo, porque generaliza entre estados vecinos y sus valores iniciales son arbitrarios.
 
@@ -164,9 +187,9 @@ Ambos esquemas los dibujé a mano y los fotografié. No fueron generados con IA.
 
 ## 5. Mejor resultado de Q-Learning
 
-![Curva de entrenamiento de Q-Learning](resultados/qlearning_curva.png)
+![Curva de entrenamiento de Q-Learning](resultados/figuras/qlearning_curva.png)
 
-**Recompensa lograda: -123.0 ± 16.4 en 100 episodios voraces, con bandera en 98 de 100** (mejor episodio -110, peor -200). Corresponde al punto de control del episodio 10 500. La CLI del curso, sobre ese mismo archivo, dio -117.7 ± 3.6 con 10 de 10 en la corrida que guardé (`resultados/qlearning_cli_eval.txt`); su evaluación usa solo 10 episodios sin semilla, así que cambia de una ejecución a otra. Cifras completas en `resultados/qlearning_evaluacion.json`.
+**Recompensa lograda: -123.0 ± 16.4 en 100 episodios voraces, con bandera en 98 de 100** (mejor episodio -110, peor -200). Corresponde al punto de control del episodio 10 500. La CLI del curso, sobre ese mismo archivo, dio -117.7 ± 3.6 con 10 de 10 en la corrida que guardé (`resultados/registros/qlearning_cli_eval.txt`); su evaluación usa solo 10 episodios sin semilla, así que cambia de una ejecución a otra. Cifras completas en `resultados/metricas/qlearning_evaluacion.json`.
 
 Comentario. La tabla pasa los primeros 1 620 episodios en -200; la primera bandera llega en el 1 621, cuando epsilon todavía ronda 0.44. Desde ahí mejora a saltos hasta su mejor tramo, cerca del episodio 10 500, y después no se estabiliza. En la segunda mitad del entrenamiento los controles voraces oscilan entre -120 y -178, y el agente del último episodio evalúa en -153.9, treinta puntos peor que el punto de control. Por eso guardo el mejor punto y no el último. Con las semillas 1, 2 y 3 y los mismos hiperparámetros, el agente del último episodio evaluó en -131.0, -132.9 y -164.1, lo que sitúa la referencia de -133 del repositorio base dentro de lo esperable y confirma que la variación entre corridas es grande.
 
@@ -174,9 +197,9 @@ Veo dos causas para la oscilación. La tasa de aprendizaje es constante (0.1), y
 
 ## 6. Mejor resultado de DQN
 
-![Curva de entrenamiento de DQN](resultados/dqn_curva.png)
+![Curva de entrenamiento de DQN](resultados/figuras/dqn_curva.png)
 
-**Recompensa lograda: -96.7 ± 7.6 en 100 episodios voraces, con bandera en 100 de 100** (mejor episodio -83, peor -104). Corresponde al punto de control del episodio 2 450. La CLI del curso da -96.6 ± 8.2 con 10 de 10 (`resultados/dqn_cli_eval.txt`). Cifras completas en `resultados/dqn_evaluacion.json`.
+**Recompensa lograda: -96.7 ± 7.6 en 100 episodios voraces, con bandera en 100 de 100** (mejor episodio -83, peor -104). Corresponde al punto de control del episodio 2 450. La CLI del curso da -96.6 ± 8.2 con 10 de 10 (`resultados/registros/dqn_cli_eval.txt`). Cifras completas en `resultados/metricas/dqn_evaluacion.json`.
 
 Comentario. Con la exploración persistente, la primera bandera aparece en el episodio 13. El primer control voraz con bandera llega en el episodio 350 y el primero por encima de -110 en el 950 (-102.4), tras unos 175 000 pasos de entorno. Desde el episodio 1 050 la mayoría de los controles queda entre -100 y -117. Incluso el peor episodio de la evaluación (-104) supera al mejor de la tabla (-110).
 
@@ -184,7 +207,7 @@ Dos rasgos de la curva merecen explicación. La media móvil de entrenamiento (l
 
 ## 7. Comparación y estrategia elegida
 
-![Controles voraces de ambos agentes](resultados/comparacion_controles.png)
+![Controles voraces de ambos agentes](resultados/figuras/comparacion_controles.png)
 
 | Criterio | Q-Learning tabular | DQN |
 |---|---|---|
@@ -209,24 +232,56 @@ Dos rasgos de la curva merecen explicación. La media móvil de entrenamiento (l
 ## 8. Estructura del repositorio
 
 ```
-src/mountain_car/
-├── cli.py                  # CLI del curso (sin cambios)
-└── agents/
-    ├── qlearning.py        # Ejercicios 1a, 1b, 1c
-    └── dqn.py              # Ejercicios 2a, 2b y 3
-scripts/
-├── diagnostico_exploracion.py   # cuenta banderas según la persistencia de la exploración
-├── experimento.py               # entrenamiento con semilla, controles y evaluación final
-└── graficar.py                  # curvas en PNG
-resultados/                 # registros, CSV, JSON y curvas de la corrida reportada
-esquemas/                   # dibujos a mano de los dos ciclos de entrenamiento
-saves/                      # agentes entrenados (mejor punto de control de cada uno)
-EXERCISES.md                # enunciado original de los ejercicios
+├── README.md                    # este documento
+├── CITATION.cff                 # metadatos para citar el trabajo
+├── CHANGELOG.md                 # registro de cambios
+├── Makefile                     # atajos: pruebas, evaluar, reproducir
+├── EXERCISES.md                 # enunciado original de los ejercicios
+├── src/mountain_car/
+│   ├── cli.py                   # CLI del curso (sin cambios)
+│   └── agents/
+│       ├── qlearning.py         # Ejercicios 1a, 1b, 1c
+│       └── dqn.py               # Ejercicios 2a, 2b y 3
+├── scripts/
+│   ├── diagnostico_exploracion.py   # cuenta banderas según la persistencia de la exploración
+│   ├── experimento.py               # entrenamiento con semilla, controles y evaluación final
+│   └── graficar.py                  # curvas en PNG
+├── tests/                       # 11 pruebas rápidas de ambos agentes (corren en CI)
+├── resultados/
+│   ├── figuras/                 # curvas de entrenamiento y comparación
+│   ├── metricas/                # historial por episodio (CSV) y resúmenes (JSON)
+│   └── registros/               # salidas de consola de cada corrida
+├── saves/                       # agentes entrenados (mejor punto de control de cada uno)
+├── esquemas/                    # dibujos propios de los dos ciclos de entrenamiento
+└── docs/
+    ├── tarjetas_de_modelo.md        # ficha de cada agente: datos, resultado, límites
+    ├── lista_de_reproducibilidad.md # qué se puede reproducir y dónde está la evidencia
+    └── referencias.bib              # bibliografía en BibTeX
 ```
 
 ## 9. Declaración de uso de IA
 
-Usé un asistente de IA como apoyo para programar las soluciones de los ejercicios, ejecutar los entrenamientos, elaborar los scripts de medición y redactar un borrador de este documento. Revisé el código línea por línea, verifiqué las cifras contra los archivos de `resultados/` y asumo la responsabilidad por el contenido. Los dos esquemas de la sección 4 son dibujos hechos a mano por mí, sin intervención de IA.
+Usé un asistente de IA como apoyo para programar las soluciones de los ejercicios, ejecutar los entrenamientos, elaborar los scripts de medición, organizar el repositorio y redactar un borrador de este documento. Revisé el código línea por línea, verifiqué las cifras contra los archivos de `resultados/` y asumo la responsabilidad por el contenido. Los dos esquemas de la sección 4 son dibujos hechos a mano por mí, sin intervención de IA.
+
+## 10. Cómo citar
+
+GitHub muestra el botón "Cite this repository" a partir de `CITATION.cff`. En APA 7:
+
+Socarrás Molina, L. (2026). *MountainCar-v0 con Q-Learning tabular y DQN: exploración persistente en un entorno de recompensa plana* (Versión 1.0.0) [Software]. GitHub. https://github.com/<mi-usuario>/mountain_car
+
+```bibtex
+@software{socarras2026mountaincar,
+  author  = {Socarr{\'a}s Molina, Leonar},
+  title   = {MountainCar-v0 con Q-Learning tabular y DQN: exploraci{\'o}n persistente en un entorno de recompensa plana},
+  year    = {2026},
+  version = {1.0.0},
+  url     = {https://github.com/<mi-usuario>/mountain_car}
+}
+```
+
+## 11. Licencia y agradecimientos
+
+El código se distribuye bajo licencia Apache 2.0, la misma del repositorio base. Este trabajo es una obra derivada de [emiliomunozai/mountain_car](https://github.com/emiliomunozai/mountain_car): la CLI, los bucles de entrenamiento, la persistencia y el enunciado de los ejercicios son del profesor Emilio Muñoz Pérez, a quien agradezco un Ejercicio 3 diseñado para que el diagnóstico importe más que el parche. El entorno MountainCar-v0 es de la Farama Foundation (Gymnasium).
 
 ## Referencias
 
@@ -240,4 +295,4 @@ Sutton, R. S., & Barto, A. G. (2018). *Reinforcement learning: An introduction* 
 
 Zhao, S. (2025). *Mathematical foundations of reinforcement learning*. Springer. https://github.com/MathFoundationRL/Book-Mathematical-Foundation-of-Reinforcement-Learning
 
-Las páginas de Zhao (2025) corresponden al PDF abierto que el autor publica en GitHub y pueden diferir de la edición impresa.
+La bibliografía está también en BibTeX en `docs/referencias.bib`. Las páginas de Zhao (2025) corresponden al PDF abierto que el autor publica en GitHub y pueden diferir de la edición impresa.
