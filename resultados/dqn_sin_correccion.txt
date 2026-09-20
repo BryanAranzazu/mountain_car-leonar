@@ -1,0 +1,12 @@
+Episode 50/500 | Avg Reward: -200.00 | Epsilon: 0.7783 | Buffer: 10000
+Episode 100/500 | Avg Reward: -200.00 | Epsilon: 0.6058 | Buffer: 20000
+Episode 150/500 | Avg Reward: -200.00 | Epsilon: 0.4715 | Buffer: 30000
+Episode 200/500 | Avg Reward: -200.00 | Epsilon: 0.3670 | Buffer: 40000
+Episode 250/500 | Avg Reward: -200.00 | Epsilon: 0.2856 | Buffer: 50000
+Episode 300/500 | Avg Reward: -200.00 | Epsilon: 0.2223 | Buffer: 60000
+Episode 350/500 | Avg Reward: -200.00 | Epsilon: 0.1730 | Buffer: 70000
+Episode 400/400 | Avg Reward: -200.00 | Epsilon: 0.1347 | Buffer: 80000
+episodios con bandera: 0 de 400
+00.00 | Epsilon: 0.1048 | Buffer: 90000
+Episode 500/500 | Avg Reward: -200.00 | Epsilon: 0.0816 | Buffer: 100000
+episodios con bandera: 0 de 500
