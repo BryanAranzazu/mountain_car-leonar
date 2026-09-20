@@ -17,7 +17,10 @@ dependencies = [
 ]
 
 [dependency-groups]
-dev = ["ruff>=0.15.5"]
+dev = [
+    "pytest>=9.1.1",
+    "ruff>=0.15.5",
+]
 
 [project.scripts]
 mountaincar = "mountain_car.cli:main"
