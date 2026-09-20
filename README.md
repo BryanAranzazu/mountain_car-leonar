@@ -1,3 +1,8 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="resultados/figuras/banner_oscuro.png">
+  <img alt="MountainCar-v0 con Q-Learning tabular y DQN: el valle con el carro y la bandera, y la política aprendida por DQN con la espiral de un episodio" src="resultados/figuras/banner_claro.png">
+</picture>
+
 # MountainCar-v0 con Q-Learning tabular y DQN
 
 [![CI](https://github.com/leonarsomo/mountain_car/actions/workflows/ci.yml/badge.svg)](https://github.com/leonarsomo/mountain_car/actions/workflows/ci.yml)
@@ -282,7 +287,8 @@ El costo restante, −max Q(s, a), es la cantidad de pasos que el agente cree qu
 │   ├── diagnostico_exploracion.py   # cuenta banderas según la persistencia de la exploración
 │   ├── experimento.py               # entrenamiento con semilla, controles y evaluación final
 │   ├── graficar.py                  # figuras en tema claro y oscuro
-│   └── animar.py                    # GIF de un episodio voraz de cada agente
+│   ├── animar.py                    # GIF de un episodio voraz de cada agente
+│   └── banner.py                    # banner del repositorio, hecho con los datos del taller
 ├── tests/                       # 11 pruebas rápidas de ambos agentes (corren en CI)
 ├── resultados/
 │   ├── figuras/                 # curvas, mapas de política y de valor, diagnóstico, GIF

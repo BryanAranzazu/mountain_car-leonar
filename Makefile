@@ -37,5 +37,6 @@ entrenar-dqn:
 figuras:
 	uv run --with matplotlib python scripts/graficar.py
 	uv run --with pillow python scripts/animar.py
+	PYTHONPATH=scripts uv run --with matplotlib python scripts/banner.py
 
 reproducir: instalar lint pruebas diagnostico entrenar-qlearning entrenar-dqn figuras
