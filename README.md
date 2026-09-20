@@ -1,13 +1,13 @@
 # MountainCar-v0 con Q-Learning tabular y DQN
 
-[![CI](https://github.com/<mi-usuario>/mountain_car/actions/workflows/ci.yml/badge.svg)](https://github.com/<mi-usuario>/mountain_car/actions/workflows/ci.yml)
+[![CI](https://github.com/leonarsomo/mountain_car/actions/workflows/ci.yml/badge.svg)](https://github.com/leonarsomo/mountain_car/actions/workflows/ci.yml)
 [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](.python-version)
 [![Licencia Apache 2.0](https://img.shields.io/badge/licencia-Apache%202.0-green.svg)](LICENSE)
 [![Citar este trabajo](https://img.shields.io/badge/citar-CITATION.cff-orange.svg)](CITATION.cff)
 
 **Exploración persistente en un entorno de recompensa plana.** Taller 1 de la Unidad 2, curso Simulación y Aprendizaje por Refuerzo, Maestría en Inteligencia Artificial, Universidad de La Sabana (Chía, Colombia), periodo 2026-5.
 
-Autor: Leonar Socarrás Molina (leonarsomo@unisabana.edu.co). Docente: Emilio Muñoz Pérez. Repositorio base: [emiliomunozai/mountain_car](https://github.com/emiliomunozai/mountain_car).
+Autor: Leonar Socarrás Molina (leonarsomo@unisabana.edu.co, ORCID [0000-0003-0601-9151](https://orcid.org/0000-0003-0601-9151)). Docente: Emilio Muñoz Pérez. Repositorio base: [emiliomunozai/mountain_car](https://github.com/emiliomunozai/mountain_car).
 
 ## Resumen
 
@@ -66,7 +66,7 @@ Dos consecuencias gobiernan todo lo que sigue. La primera: como cada paso cuesta
 Requisitos: Python 3.11 y [uv](https://docs.astral.sh/uv/). No hace falta GPU.
 
 ```bash
-git clone https://github.com/<mi-usuario>/mountain_car.git
+git clone https://github.com/leonarsomo/mountain_car.git
 cd mountain_car
 uv sync
 ```
@@ -267,7 +267,7 @@ Usé un asistente de IA como apoyo para programar las soluciones de los ejercici
 
 GitHub muestra el botón "Cite this repository" a partir de `CITATION.cff`. En APA 7:
 
-Socarrás Molina, L. (2026). *MountainCar-v0 con Q-Learning tabular y DQN: exploración persistente en un entorno de recompensa plana* (Versión 1.0.0) [Software]. GitHub. https://github.com/<mi-usuario>/mountain_car
+Socarrás Molina, L. (2026). *MountainCar-v0 con Q-Learning tabular y DQN: exploración persistente en un entorno de recompensa plana* (Versión 1.0.0) [Software]. GitHub. https://github.com/leonarsomo/mountain_car
 
 ```bibtex
 @software{socarras2026mountaincar,
@@ -275,7 +275,7 @@ Socarrás Molina, L. (2026). *MountainCar-v0 con Q-Learning tabular y DQN: explo
   title   = {MountainCar-v0 con Q-Learning tabular y DQN: exploraci{\'o}n persistente en un entorno de recompensa plana},
   year    = {2026},
   version = {1.0.0},
-  url     = {https://github.com/<mi-usuario>/mountain_car}
+  url     = {https://github.com/leonarsomo/mountain_car}
 }
 ```
 
