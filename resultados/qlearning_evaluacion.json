@@ -1,0 +1,18 @@
+{
+  "agente": "qlearning",
+  "semilla": 7,
+  "episodios_entrenamiento": 20000,
+  "minutos_entrenamiento": 4.4,
+  "primer_episodio_con_bandera": 1621,
+  "mejor_episodio_entrenamiento": -100.0,
+  "mejor_media_movil_100_entrenamiento": -124.85,
+  "punto_de_control_elegido": 10500,
+  "eval_episodios": 100,
+  "eval_media": -123.0,
+  "eval_desviacion": 16.42,
+  "eval_mejor": -110.0,
+  "eval_peor": -200.0,
+  "eval_banderas": 98,
+  "eval_media_ultimo_modelo": -153.86,
+  "eval_banderas_ultimo_modelo": 100
+}

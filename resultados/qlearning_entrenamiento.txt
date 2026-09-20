@@ -1,0 +1,265 @@
+Episode 100/500 | Avg Reward: -200.00 | Epsilon: 0.9512 | States visited: 54
+Episode 200/500 | Avg Reward: -200.00 | Epsilon: 0.9048 | States visited: 72
+Episode 300/500 | Avg Reward: -200.00 | Epsilon: 0.8607 | States visited: 113
+Episode 400/500 | Avg Reward: -200.00 | Epsilon: 0.8187 | States visited: 115
+Episode 500/500 | Avg Reward: -200.00 | Epsilon: 0.7788 | States visited: 119
+Saved Q-Learning agent to saves/qlearning_mountaincar.pkl
+  control @ 500: media voraz -200.00, banderas 0/20
+Episode 100/500 | Avg Reward: -200.00 | Epsilon: 0.7408 | States visited: 150
+Episode 200/500 | Avg Reward: -200.00 | Epsilon: 0.7046 | States visited: 156
+Episode 300/500 | Avg Reward: -200.00 | Epsilon: 0.6703 | States visited: 158
+Episode 400/500 | Avg Reward: -200.00 | Epsilon: 0.6376 | States visited: 170
+Episode 500/500 | Avg Reward: -200.00 | Epsilon: 0.6065 | States visited: 182
+  control @ 1000: media voraz -200.00, banderas 0/20
+Episode 100/500 | Avg Reward: -200.00 | Epsilon: 0.5769 | States visited: 215
+Episode 200/500 | Avg Reward: -200.00 | Epsilon: 0.5487 | States visited: 219
+Episode 300/500 | Avg Reward: -200.00 | Epsilon: 0.5220 | States visited: 228
+Episode 400/500 | Avg Reward: -200.00 | Epsilon: 0.4965 | States visited: 241
+Episode 500/500 | Avg Reward: -200.00 | Epsilon: 0.4723 | States visited: 247
+  control @ 1500: media voraz -200.00, banderas 0/20
+Episode 100/500 | Avg Reward: -200.00 | Epsilon: 0.4492 | States visited: 249
+Episode 200/500 | Avg Reward: -199.92 | Epsilon: 0.4273 | States visited: 262
+Episode 300/500 | Avg Reward: -200.00 | Epsilon: 0.4065 | States visited: 264
+Episode 400/500 | Avg Reward: -200.00 | Epsilon: 0.3866 | States visited: 265
+Episode 500/500 | Avg Reward: -199.87 | Epsilon: 0.3678 | States visited: 271
+Saved Q-Learning agent to saves/qlearning_mountaincar.pkl
+  control @ 2000: media voraz -165.40, banderas 16/20
+Episode 100/500 | Avg Reward: -199.45 | Epsilon: 0.3498 | States visited: 275
+Episode 200/500 | Avg Reward: -197.83 | Epsilon: 0.3328 | States visited: 276
+Episode 300/500 | Avg Reward: -199.04 | Epsilon: 0.3165 | States visited: 276
+Episode 400/500 | Avg Reward: -196.66 | Epsilon: 0.3011 | States visited: 279
+Episode 500/500 | Avg Reward: -198.57 | Epsilon: 0.2864 | States visited: 281
+  control @ 2500: media voraz -200.00, banderas 0/20
+Episode 100/500 | Avg Reward: -196.26 | Epsilon: 0.2724 | States visited: 282
+Episode 200/500 | Avg Reward: -194.00 | Epsilon: 0.2592 | States visited: 283
+Episode 300/500 | Avg Reward: -197.94 | Epsilon: 0.2465 | States visited: 284
+Episode 400/500 | Avg Reward: -191.53 | Epsilon: 0.2345 | States visited: 285
+Episode 500/500 | Avg Reward: -189.84 | Epsilon: 0.2230 | States visited: 286
+  control @ 3000: media voraz -184.05, banderas 13/20
+Episode 100/500 | Avg Reward: -185.87 | Epsilon: 0.2122 | States visited: 286
+Episode 200/500 | Avg Reward: -185.51 | Epsilon: 0.2018 | States visited: 287
+Episode 300/500 | Avg Reward: -194.24 | Epsilon: 0.1920 | States visited: 287
+Episode 400/500 | Avg Reward: -198.95 | Epsilon: 0.1826 | States visited: 287
+Episode 500/500 | Avg Reward: -191.82 | Epsilon: 0.1737 | States visited: 287
+  control @ 3500: media voraz -180.70, banderas 11/20
+Episode 100/500 | Avg Reward: -194.44 | Epsilon: 0.1652 | States visited: 287
+Episode 200/500 | Avg Reward: -183.19 | Epsilon: 0.1572 | States visited: 288
+Episode 300/500 | Avg Reward: -179.96 | Epsilon: 0.1495 | States visited: 289
+Episode 400/500 | Avg Reward: -192.04 | Epsilon: 0.1422 | States visited: 290
+Episode 500/500 | Avg Reward: -179.33 | Epsilon: 0.1353 | States visited: 290
+  control @ 4000: media voraz -185.80, banderas 19/20
+Episode 100/500 | Avg Reward: -197.47 | Epsilon: 0.1287 | States visited: 290
+Episode 200/500 | Avg Reward: -182.15 | Epsilon: 0.1224 | States visited: 290
+Episode 300/500 | Avg Reward: -178.78 | Epsilon: 0.1164 | States visited: 292
+Episode 400/500 | Avg Reward: -180.79 | Epsilon: 0.1107 | States visited: 292
+Episode 500/500 | Avg Reward: -183.73 | Epsilon: 0.1053 | States visited: 292
+Saved Q-Learning agent to saves/qlearning_mountaincar.pkl
+  control @ 4500: media voraz -160.30, banderas 13/20
+Episode 100/500 | Avg Reward: -173.76 | Epsilon: 0.1002 | States visited: 293
+Episode 200/500 | Avg Reward: -158.35 | Epsilon: 0.0953 | States visited: 293
+Episode 300/500 | Avg Reward: -166.02 | Epsilon: 0.0907 | States visited: 293
+Episode 400/500 | Avg Reward: -158.79 | Epsilon: 0.0862 | States visited: 293
+Episode 500/500 | Avg Reward: -157.90 | Epsilon: 0.0820 | States visited: 293
+  control @ 5000: media voraz -168.45, banderas 20/20
+Episode 100/500 | Avg Reward: -170.37 | Epsilon: 0.0780 | States visited: 293
+Episode 200/500 | Avg Reward: -167.56 | Epsilon: 0.0742 | States visited: 294
+Episode 300/500 | Avg Reward: -181.65 | Epsilon: 0.0706 | States visited: 294
+Episode 400/500 | Avg Reward: -178.06 | Epsilon: 0.0672 | States visited: 294
+Episode 500/500 | Avg Reward: -173.42 | Epsilon: 0.0639 | States visited: 294
+  control @ 5500: media voraz -176.60, banderas 19/20
+Episode 100/500 | Avg Reward: -167.23 | Epsilon: 0.0608 | States visited: 294
+Episode 200/500 | Avg Reward: -148.49 | Epsilon: 0.0578 | States visited: 294
+Episode 300/500 | Avg Reward: -155.44 | Epsilon: 0.0550 | States visited: 294
+Episode 400/500 | Avg Reward: -161.16 | Epsilon: 0.0523 | States visited: 294
+Episode 500/500 | Avg Reward: -160.47 | Epsilon: 0.0497 | States visited: 294
+Saved Q-Learning agent to saves/qlearning_mountaincar.pkl
+  control @ 6000: media voraz -140.45, banderas 16/20
+Episode 100/500 | Avg Reward: -159.97 | Epsilon: 0.0473 | States visited: 294
+Episode 200/500 | Avg Reward: -159.98 | Epsilon: 0.0450 | States visited: 294
+Episode 300/500 | Avg Reward: -149.53 | Epsilon: 0.0428 | States visited: 294
+Episode 400/500 | Avg Reward: -143.12 | Epsilon: 0.0407 | States visited: 294
+Episode 500/500 | Avg Reward: -165.13 | Epsilon: 0.0387 | States visited: 295
+Saved Q-Learning agent to saves/qlearning_mountaincar.pkl
+  control @ 6500: media voraz -133.45, banderas 20/20
+Episode 100/500 | Avg Reward: -166.28 | Epsilon: 0.0369 | States visited: 295
+Episode 200/500 | Avg Reward: -171.37 | Epsilon: 0.0351 | States visited: 295
+Episode 300/500 | Avg Reward: -167.10 | Epsilon: 0.0333 | States visited: 295
+Episode 400/500 | Avg Reward: -165.16 | Epsilon: 0.0317 | States visited: 295
+Episode 500/500 | Avg Reward: -164.83 | Epsilon: 0.0302 | States visited: 295
+  control @ 7000: media voraz -167.65, banderas 13/20
+Episode 100/500 | Avg Reward: -174.44 | Epsilon: 0.0287 | States visited: 295
+Episode 200/500 | Avg Reward: -170.85 | Epsilon: 0.0273 | States visited: 295
+Episode 300/500 | Avg Reward: -166.61 | Epsilon: 0.0260 | States visited: 295
+Episode 400/500 | Avg Reward: -164.04 | Epsilon: 0.0247 | States visited: 296
+Episode 500/500 | Avg Reward: -148.45 | Epsilon: 0.0235 | States visited: 296
+Saved Q-Learning agent to saves/qlearning_mountaincar.pkl
+  control @ 7500: media voraz -131.75, banderas 20/20
+Episode 100/500 | Avg Reward: -160.94 | Epsilon: 0.0223 | States visited: 297
+Episode 200/500 | Avg Reward: -165.85 | Epsilon: 0.0213 | States visited: 298
+Episode 300/500 | Avg Reward: -164.16 | Epsilon: 0.0202 | States visited: 298
+Episode 400/500 | Avg Reward: -169.93 | Epsilon: 0.0192 | States visited: 298
+Episode 500/500 | Avg Reward: -161.93 | Epsilon: 0.0183 | States visited: 298
+  control @ 8000: media voraz -145.20, banderas 20/20
+Episode 100/500 | Avg Reward: -161.82 | Epsilon: 0.0174 | States visited: 298
+Episode 200/500 | Avg Reward: -162.15 | Epsilon: 0.0166 | States visited: 298
+Episode 300/500 | Avg Reward: -172.79 | Epsilon: 0.0157 | States visited: 298
+Episode 400/500 | Avg Reward: -167.75 | Epsilon: 0.0150 | States visited: 298
+Episode 500/500 | Avg Reward: -142.49 | Epsilon: 0.0142 | States visited: 298
+  control @ 8500: media voraz -140.95, banderas 20/20
+Episode 100/500 | Avg Reward: -145.70 | Epsilon: 0.0136 | States visited: 298
+Episode 200/500 | Avg Reward: -151.74 | Epsilon: 0.0129 | States visited: 298
+Episode 300/500 | Avg Reward: -152.66 | Epsilon: 0.0123 | States visited: 298
+Episode 400/500 | Avg Reward: -167.62 | Epsilon: 0.0117 | States visited: 298
+Episode 500/500 | Avg Reward: -172.91 | Epsilon: 0.0111 | States visited: 298
+  control @ 9000: media voraz -171.70, banderas 20/20
+Episode 100/500 | Avg Reward: -163.69 | Epsilon: 0.0106 | States visited: 298
+Episode 200/500 | Avg Reward: -166.93 | Epsilon: 0.0100 | States visited: 298
+Episode 300/500 | Avg Reward: -170.75 | Epsilon: 0.0100 | States visited: 298
+Episode 400/500 | Avg Reward: -170.39 | Epsilon: 0.0100 | States visited: 298
+Episode 500/500 | Avg Reward: -162.79 | Epsilon: 0.0100 | States visited: 298
+  control @ 9500: media voraz -167.10, banderas 20/20
+Episode 100/500 | Avg Reward: -159.37 | Epsilon: 0.0100 | States visited: 298
+Episode 200/500 | Avg Reward: -157.29 | Epsilon: 0.0100 | States visited: 298
+Episode 300/500 | Avg Reward: -142.58 | Epsilon: 0.0100 | States visited: 298
+Episode 400/500 | Avg Reward: -138.44 | Epsilon: 0.0100 | States visited: 298
+Episode 500/500 | Avg Reward: -140.16 | Epsilon: 0.0100 | States visited: 298
+  control @ 10000: media voraz -137.55, banderas 20/20
+Episode 100/500 | Avg Reward: -139.24 | Epsilon: 0.0100 | States visited: 298
+Episode 200/500 | Avg Reward: -141.28 | Epsilon: 0.0100 | States visited: 298
+Episode 300/500 | Avg Reward: -135.06 | Epsilon: 0.0100 | States visited: 298
+Episode 400/500 | Avg Reward: -137.99 | Epsilon: 0.0100 | States visited: 298
+Episode 500/500 | Avg Reward: -134.18 | Epsilon: 0.0100 | States visited: 298
+Saved Q-Learning agent to saves/qlearning_mountaincar.pkl
+  control @ 10500: media voraz -120.20, banderas 19/20
+Episode 100/500 | Avg Reward: -126.31 | Epsilon: 0.0100 | States visited: 298
+Episode 200/500 | Avg Reward: -131.18 | Epsilon: 0.0100 | States visited: 298
+Episode 300/500 | Avg Reward: -125.55 | Epsilon: 0.0100 | States visited: 298
+Episode 400/500 | Avg Reward: -135.67 | Epsilon: 0.0100 | States visited: 298
+Episode 500/500 | Avg Reward: -142.33 | Epsilon: 0.0100 | States visited: 298
+  control @ 11000: media voraz -128.90, banderas 20/20
+Episode 100/500 | Avg Reward: -137.05 | Epsilon: 0.0100 | States visited: 298
+Episode 200/500 | Avg Reward: -141.49 | Epsilon: 0.0100 | States visited: 298
+Episode 300/500 | Avg Reward: -158.26 | Epsilon: 0.0100 | States visited: 298
+Episode 400/500 | Avg Reward: -164.13 | Epsilon: 0.0100 | States visited: 298
+Episode 500/500 | Avg Reward: -150.77 | Epsilon: 0.0100 | States visited: 298
+  control @ 11500: media voraz -133.35, banderas 20/20
+Episode 100/500 | Avg Reward: -141.43 | Epsilon: 0.0100 | States visited: 298
+Episode 200/500 | Avg Reward: -136.99 | Epsilon: 0.0100 | States visited: 298
+Episode 300/500 | Avg Reward: -137.54 | Epsilon: 0.0100 | States visited: 298
+Episode 400/500 | Avg Reward: -148.79 | Epsilon: 0.0100 | States visited: 298
+Episode 500/500 | Avg Reward: -169.00 | Epsilon: 0.0100 | States visited: 298
+  control @ 12000: media voraz -177.95, banderas 20/20
+Episode 100/500 | Avg Reward: -171.12 | Epsilon: 0.0100 | States visited: 298
+Episode 200/500 | Avg Reward: -164.58 | Epsilon: 0.0100 | States visited: 298
+Episode 300/500 | Avg Reward: -163.87 | Epsilon: 0.0100 | States visited: 298
+Episode 400/500 | Avg Reward: -158.99 | Epsilon: 0.0100 | States visited: 298
+Episode 500/500 | Avg Reward: -158.65 | Epsilon: 0.0100 | States visited: 298
+  control @ 12500: media voraz -162.60, banderas 20/20
+Episode 100/500 | Avg Reward: -154.19 | Epsilon: 0.0100 | States visited: 299
+Episode 200/500 | Avg Reward: -147.52 | Epsilon: 0.0100 | States visited: 299
+Episode 300/500 | Avg Reward: -145.03 | Epsilon: 0.0100 | States visited: 299
+Episode 400/500 | Avg Reward: -149.05 | Epsilon: 0.0100 | States visited: 299
+Episode 500/500 | Avg Reward: -144.00 | Epsilon: 0.0100 | States visited: 299
+  control @ 13000: media voraz -147.25, banderas 20/20
+Episode 100/500 | Avg Reward: -142.72 | Epsilon: 0.0100 | States visited: 299
+Episode 200/500 | Avg Reward: -141.24 | Epsilon: 0.0100 | States visited: 299
+Episode 300/500 | Avg Reward: -143.80 | Epsilon: 0.0100 | States visited: 299
+Episode 400/500 | Avg Reward: -141.86 | Epsilon: 0.0100 | States visited: 299
+Episode 500/500 | Avg Reward: -140.69 | Epsilon: 0.0100 | States visited: 299
+  control @ 13500: media voraz -148.65, banderas 20/20
+Episode 100/500 | Avg Reward: -142.82 | Epsilon: 0.0100 | States visited: 299
+Episode 200/500 | Avg Reward: -140.82 | Epsilon: 0.0100 | States visited: 299
+Episode 300/500 | Avg Reward: -142.89 | Epsilon: 0.0100 | States visited: 299
+Episode 400/500 | Avg Reward: -142.47 | Epsilon: 0.0100 | States visited: 299
+Episode 500/500 | Avg Reward: -142.84 | Epsilon: 0.0100 | States visited: 299
+  control @ 14000: media voraz -149.70, banderas 16/20
+Episode 100/500 | Avg Reward: -144.91 | Epsilon: 0.0100 | States visited: 299
+Episode 200/500 | Avg Reward: -145.72 | Epsilon: 0.0100 | States visited: 299
+Episode 300/500 | Avg Reward: -144.00 | Epsilon: 0.0100 | States visited: 299
+Episode 400/500 | Avg Reward: -141.97 | Epsilon: 0.0100 | States visited: 299
+Episode 500/500 | Avg Reward: -144.11 | Epsilon: 0.0100 | States visited: 299
+  control @ 14500: media voraz -135.50, banderas 20/20
+Episode 100/500 | Avg Reward: -140.83 | Epsilon: 0.0100 | States visited: 299
+Episode 200/500 | Avg Reward: -142.99 | Epsilon: 0.0100 | States visited: 299
+Episode 300/500 | Avg Reward: -145.10 | Epsilon: 0.0100 | States visited: 299
+Episode 400/500 | Avg Reward: -145.31 | Epsilon: 0.0100 | States visited: 299
+Episode 500/500 | Avg Reward: -143.19 | Epsilon: 0.0100 | States visited: 299
+  control @ 15000: media voraz -146.15, banderas 20/20
+Episode 100/500 | Avg Reward: -160.53 | Epsilon: 0.0100 | States visited: 299
+Episode 200/500 | Avg Reward: -144.69 | Epsilon: 0.0100 | States visited: 299
+Episode 300/500 | Avg Reward: -148.95 | Epsilon: 0.0100 | States visited: 299
+Episode 400/500 | Avg Reward: -156.56 | Epsilon: 0.0100 | States visited: 299
+Episode 500/500 | Avg Reward: -148.71 | Epsilon: 0.0100 | States visited: 299
+  control @ 15500: media voraz -128.80, banderas 20/20
+Episode 100/500 | Avg Reward: -144.84 | Epsilon: 0.0100 | States visited: 299
+Episode 200/500 | Avg Reward: -169.50 | Epsilon: 0.0100 | States visited: 299
+Episode 300/500 | Avg Reward: -150.83 | Epsilon: 0.0100 | States visited: 299
+Episode 400/500 | Avg Reward: -148.81 | Epsilon: 0.0100 | States visited: 299
+Episode 500/500 | Avg Reward: -145.83 | Epsilon: 0.0100 | States visited: 299
+  control @ 16000: media voraz -154.85, banderas 18/20
+Episode 100/500 | Avg Reward: -148.44 | Epsilon: 0.0100 | States visited: 299
+Episode 200/500 | Avg Reward: -147.40 | Epsilon: 0.0100 | States visited: 299
+Episode 300/500 | Avg Reward: -148.35 | Epsilon: 0.0100 | States visited: 299
+Episode 400/500 | Avg Reward: -148.91 | Epsilon: 0.0100 | States visited: 299
+Episode 500/500 | Avg Reward: -146.22 | Epsilon: 0.0100 | States visited: 299
+  control @ 16500: media voraz -147.65, banderas 20/20
+Episode 100/500 | Avg Reward: -146.43 | Epsilon: 0.0100 | States visited: 299
+Episode 200/500 | Avg Reward: -148.09 | Epsilon: 0.0100 | States visited: 299
+Episode 300/500 | Avg Reward: -164.47 | Epsilon: 0.0100 | States visited: 299
+Episode 400/500 | Avg Reward: -155.24 | Epsilon: 0.0100 | States visited: 299
+Episode 500/500 | Avg Reward: -144.96 | Epsilon: 0.0100 | States visited: 299
+  control @ 17000: media voraz -134.50, banderas 20/20
+Episode 100/500 | Avg Reward: -143.90 | Epsilon: 0.0100 | States visited: 299
+Episode 200/500 | Avg Reward: -143.32 | Epsilon: 0.0100 | States visited: 299
+Episode 300/500 | Avg Reward: -144.56 | Epsilon: 0.0100 | States visited: 299
+Episode 400/500 | Avg Reward: -143.07 | Epsilon: 0.0100 | States visited: 299
+Episode 500/500 | Avg Reward: -143.18 | Epsilon: 0.0100 | States visited: 299
+  control @ 17500: media voraz -132.75, banderas 20/20
+Episode 100/500 | Avg Reward: -140.58 | Epsilon: 0.0100 | States visited: 299
+Episode 200/500 | Avg Reward: -140.40 | Epsilon: 0.0100 | States visited: 299
+Episode 300/500 | Avg Reward: -141.75 | Epsilon: 0.0100 | States visited: 299
+Episode 400/500 | Avg Reward: -142.82 | Epsilon: 0.0100 | States visited: 299
+Episode 500/500 | Avg Reward: -143.16 | Epsilon: 0.0100 | States visited: 299
+  control @ 18000: media voraz -135.80, banderas 20/20
+Episode 100/500 | Avg Reward: -143.90 | Epsilon: 0.0100 | States visited: 299
+Episode 200/500 | Avg Reward: -169.18 | Epsilon: 0.0100 | States visited: 299
+Episode 300/500 | Avg Reward: -172.03 | Epsilon: 0.0100 | States visited: 299
+Episode 400/500 | Avg Reward: -168.92 | Epsilon: 0.0100 | States visited: 299
+Episode 500/500 | Avg Reward: -166.08 | Epsilon: 0.0100 | States visited: 299
+  control @ 18500: media voraz -166.05, banderas 20/20
+Episode 100/500 | Avg Reward: -160.44 | Epsilon: 0.0100 | States visited: 299
+Episode 200/500 | Avg Reward: -164.85 | Epsilon: 0.0100 | States visited: 299
+Episode 300/500 | Avg Reward: -164.05 | Epsilon: 0.0100 | States visited: 299
+Episode 400/500 | Avg Reward: -165.37 | Epsilon: 0.0100 | States visited: 299
+Episode 500/500 | Avg Reward: -164.42 | Epsilon: 0.0100 | States visited: 299
+  control @ 19000: media voraz -166.15, banderas 20/20
+Episode 100/500 | Avg Reward: -135.84 | Epsilon: 0.0100 | States visited: 299
+Episode 200/500 | Avg Reward: -137.66 | Epsilon: 0.0100 | States visited: 299
+Episode 300/500 | Avg Reward: -140.53 | Epsilon: 0.0100 | States visited: 299
+Episode 400/500 | Avg Reward: -146.63 | Epsilon: 0.0100 | States visited: 299
+Episode 500/500 | Avg Reward: -147.48 | Epsilon: 0.0100 | States visited: 299
+  control @ 19500: media voraz -141.85, banderas 20/20
+Episode 100/500 | Avg Reward: -162.78 | Epsilon: 0.0100 | States visited: 299
+Episode 200/500 | Avg Reward: -181.12 | Epsilon: 0.0100 | States visited: 299
+Episode 300/500 | Avg Reward: -177.92 | Epsilon: 0.0100 | States visited: 299
+Episode 400/500 | Avg Reward: -174.91 | Epsilon: 0.0100 | States visited: 299
+Episode 500/500 | Avg Reward: -166.54 | Epsilon: 0.0100 | States visited: 299
+  control @ 20000: media voraz -159.15, banderas 20/20
+{
+  "agente": "qlearning",
+  "semilla": 7,
+  "episodios_entrenamiento": 20000,
+  "minutos_entrenamiento": 4.4,
+  "primer_episodio_con_bandera": 1621,
+  "mejor_episodio_entrenamiento": -100.0,
+  "mejor_media_movil_100_entrenamiento": -124.85,
+  "punto_de_control_elegido": 10500,
+  "eval_episodios": 100,
+  "eval_media": -123.0,
+  "eval_desviacion": 16.42,
+  "eval_mejor": -110.0,
+  "eval_peor": -200.0,
+  "eval_banderas": 98,
+  "eval_media_ultimo_modelo": -153.86,
+  "eval_banderas_ultimo_modelo": 100
+}

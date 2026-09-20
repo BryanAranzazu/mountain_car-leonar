@@ -1,0 +1,9 @@
+Q-Learning agent for MountainCar-v0
+  Episodes trained : 10500
+  States visited   : 298 / 400
+  Epsilon          : 0.0100
+  LR / Gamma       : 0.1 / 0.99
+
+Evaluating (10 episodes) ...
+  Mean reward: -117.70 +/- 3.63
+  Reached the flag: 10/10 episodes
