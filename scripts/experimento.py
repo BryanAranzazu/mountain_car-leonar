@@ -13,7 +13,7 @@ punto del entrenamiento y no al ultimo, que en MountainCar puede ser bastante pe
 La cifra que se reporta sale de una evaluacion final aparte, con semillas que no se
 usaron ni para entrenar ni para elegir el punto de control.
 
-Archivos que deja en resultados/:
+Archivos que deja en resultados/metricas/:
     <agente>_historial.csv     recompensa de cada episodio de entrenamiento
     <agente>_controles.csv     media voraz al cierre de cada tramo
     <agente>_evaluacion.json   resumen numerico
@@ -30,7 +30,7 @@ import torch
 
 from mountain_car.cli import AGENTS, ENV_ID, _run_episode
 
-OUT = Path("resultados")
+OUT = Path("resultados") / "metricas"
 
 
 def evaluar(agent, episodios: int, seed: int) -> tuple[np.ndarray, int]:
@@ -79,7 +79,7 @@ def main() -> None:
     best = cls.load(save_path)
     rewards, flags = evaluar(best, args.eval_episodes, seed=args.seed + 1000)
 
-    OUT.mkdir(exist_ok=True)
+    OUT.mkdir(parents=True, exist_ok=True)
     np.savetxt(OUT / f"{args.agent}_historial.csv", history, fmt="%.0f", header="recompensa", comments="")
     np.savetxt(
         OUT / f"{args.agent}_controles.csv", controles, fmt=["%d", "%.2f", "%d"],

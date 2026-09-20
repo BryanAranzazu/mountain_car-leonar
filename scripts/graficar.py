@@ -1,4 +1,4 @@
-"""Dibuja las curvas de entrenamiento a partir de los CSV de resultados/.
+"""Dibuja las curvas de entrenamiento a partir de los CSV de resultados/metricas/.
 
     uv run --with matplotlib python scripts/graficar.py
 
@@ -13,15 +13,16 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 
-OUT = Path("resultados")
+MET = Path("resultados") / "metricas"
+FIG = Path("resultados") / "figuras"
 NOMBRES = {"qlearning": "Q-Learning tabular", "dqn": "DQN"}
 COLOR = {"qlearning": "#1f6f8b", "dqn": "#b5542a"}
 
 
 def cargar(agente: str):
-    hist = np.loadtxt(OUT / f"{agente}_historial.csv", skiprows=1)
-    ctrl = np.loadtxt(OUT / f"{agente}_controles.csv", skiprows=1, delimiter=",")
-    resumen = json.loads((OUT / f"{agente}_evaluacion.json").read_text())
+    hist = np.loadtxt(MET / f"{agente}_historial.csv", skiprows=1)
+    ctrl = np.loadtxt(MET / f"{agente}_controles.csv", skiprows=1, delimiter=",")
+    resumen = json.loads((MET / f"{agente}_evaluacion.json").read_text())
     return hist, ctrl, resumen
 
 
@@ -47,7 +48,7 @@ def curva(agente: str) -> None:
     ax.legend(loc="lower right", fontsize=8)
     ax.grid(alpha=0.25)
     fig.tight_layout()
-    fig.savefig(OUT / f"{agente}_curva.png", dpi=140)
+    fig.savefig(FIG / f"{agente}_curva.png", dpi=140)
     plt.close(fig)
 
 
@@ -64,12 +65,13 @@ def comparacion() -> None:
     ax.legend()
     ax.grid(alpha=0.25, which="both")
     fig.tight_layout()
-    fig.savefig(OUT / "comparacion_controles.png", dpi=140)
+    fig.savefig(FIG / "comparacion_controles.png", dpi=140)
     plt.close(fig)
 
 
 if __name__ == "__main__":
+    FIG.mkdir(parents=True, exist_ok=True)
     for a in ("qlearning", "dqn"):
         curva(a)
     comparacion()
-    print("Graficas guardadas en resultados/")
+    print("Graficas guardadas en resultados/figuras/")
