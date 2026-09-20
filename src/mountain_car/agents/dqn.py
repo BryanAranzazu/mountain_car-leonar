@@ -102,6 +102,7 @@ class DQNAgent:
         buffer_capacity: int = 100_000,
         target_update_freq: int = 10,
         hidden: int = 128,
+        explore_repeat: float = 0.95,
     ) -> None:
         self.env_id = env_id
         self.lr = lr
@@ -113,6 +114,8 @@ class DQNAgent:
         self.buffer_capacity = buffer_capacity
         self.target_update_freq = target_update_freq
         self.hidden = hidden
+        self.explore_repeat = explore_repeat
+        self._last_explore_action: int | None = None
         self.training_episodes = 0
 
         env = gym.make(env_id)
@@ -152,8 +155,23 @@ class DQNAgent:
         from gentle to nearly-the-answer -- take only as many as you need. Try
         to diagnose it from your own measurements first.
         """
-        if not deterministic and random.random() < self.epsilon:
-            return random.randrange(self.action_dim)
+        # EJERCICIO 3 (mi correccion): exploracion persistente.
+        # El sorteo uniforme paso a paso da acciones independientes; su racha media
+        # es de 1.5 pasos y en 300 episodios aleatorios la bandera se alcanzo 0 veces
+        # (scripts/diagnostico_exploracion.py). El carro necesita empujes sostenidos
+        # para ganar impulso. Por eso, cuando epsilon decide explorar, la accion
+        # sorteada se mantiene: en cada paso siguiente continua con probabilidad
+        # `explore_repeat`, sin consultar la red ni volver a tirar epsilon. La racha
+        # dura en promedio 1 / (1 - explore_repeat) pasos (20 con 0.95). Es la idea
+        # del epsilon-greedy extendido en el tiempo de Dabney et al. (2020).
+        # La regla de aprendizaje, la recompensa y el entorno quedan intactos.
+        if not deterministic:
+            if self._last_explore_action is not None and random.random() < self.explore_repeat:
+                return self._last_explore_action
+            if random.random() < self.epsilon:
+                self._last_explore_action = random.randrange(self.action_dim)
+                return self._last_explore_action
+            self._last_explore_action = None
         with torch.no_grad():
             t = torch.as_tensor(state, dtype=torch.float32, device=self.device).unsqueeze(0)
             return int(self.q_net(t).argmax(dim=1).item())
@@ -227,6 +245,7 @@ class DQNAgent:
             obs, _ = env.reset(seed=seed if episode == 1 else None)
             total_reward = 0.0
             done = False
+            self._last_explore_action = None  # estado de exploracion: se reinicia por episodio
 
             while not done:
                 action = self.select_action(obs)
@@ -273,6 +292,7 @@ class DQNAgent:
         "buffer_capacity",
         "target_update_freq",
         "hidden",
+        "explore_repeat",
     )
 
     def save(self, path: Path) -> None:
@@ -311,5 +331,6 @@ class DQNAgent:
             f"  LR / Gamma        : {self.lr} / {self.gamma}\n"
             f"  Batch size        : {self.batch_size}\n"
             f"  Target update     : every {self.target_update_freq} episodes\n"
+            f"  Explore repeat    : {self.explore_repeat}\n"
             f"  Device            : {self.device}"
         )
