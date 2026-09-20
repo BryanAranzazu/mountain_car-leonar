@@ -5,6 +5,9 @@ __pycache__/
 
 # Add saves
 saves/**
+# Agentes entrenados del taller: se versionan para que `load --eval` funcione tras clonar.
+!saves/qlearning_mountaincar.pkl
+!saves/dqn_mountaincar.pt
 !saves/.gitkeep
 
 # C extensions
