@@ -1,0 +1,18 @@
+{
+  "agente": "dqn",
+  "semilla": 7,
+  "episodios_entrenamiento": 2500,
+  "minutos_entrenamiento": 13.69,
+  "primer_episodio_con_bandera": 13,
+  "mejor_episodio_entrenamiento": -83.0,
+  "mejor_media_movil_100_entrenamiento": -117.16,
+  "punto_de_control_elegido": 2450,
+  "eval_episodios": 100,
+  "eval_media": -96.71,
+  "eval_desviacion": 7.63,
+  "eval_mejor": -83.0,
+  "eval_peor": -104.0,
+  "eval_banderas": 100,
+  "eval_media_ultimo_modelo": -99.88,
+  "eval_banderas_ultimo_modelo": 100
+}

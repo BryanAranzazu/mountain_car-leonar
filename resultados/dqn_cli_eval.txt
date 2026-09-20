@@ -1,0 +1,13 @@
+DQN agent for MountainCar-v0
+  Episodes trained  : 2450
+  Network params    : 17,283
+  Epsilon           : 0.0100
+  LR / Gamma        : 0.001 / 0.99
+  Batch size        : 64
+  Target update     : every 10 episodes
+  Explore repeat    : 0.95
+  Device            : cpu
+
+Evaluating (10 episodes) ...
+  Mean reward: -96.60 +/- 8.22
+  Reached the flag: 10/10 episodes

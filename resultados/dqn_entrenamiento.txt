@@ -1,0 +1,324 @@
+Episode 10/50 | Avg Reward: -200.00 | Epsilon: 0.9511 | Buffer: 2000
+Episode 20/50 | Avg Reward: -197.70 | Epsilon: 0.9046 | Buffer: 3977
+Episode 30/50 | Avg Reward: -198.70 | Epsilon: 0.8604 | Buffer: 5964
+Episode 40/50 | Avg Reward: -195.10 | Epsilon: 0.8183 | Buffer: 7915
+Episode 50/50 | Avg Reward: -200.00 | Epsilon: 0.7783 | Buffer: 9915
+Saved DQN agent to saves/dqn_mountaincar.pt
+  control @ 50: media voraz -200.00, banderas 0/20
+Episode 10/50 | Avg Reward: -194.50 | Epsilon: 0.7403 | Buffer: 11860
+Episode 20/50 | Avg Reward: -200.00 | Epsilon: 0.7041 | Buffer: 13860
+Episode 30/50 | Avg Reward: -199.10 | Epsilon: 0.6696 | Buffer: 15851
+Episode 40/50 | Avg Reward: -194.10 | Epsilon: 0.6369 | Buffer: 17792
+Episode 50/50 | Avg Reward: -200.00 | Epsilon: 0.6058 | Buffer: 19792
+  control @ 100: media voraz -200.00, banderas 0/20
+Episode 10/50 | Avg Reward: -200.00 | Epsilon: 0.5762 | Buffer: 21792
+Episode 20/50 | Avg Reward: -195.00 | Epsilon: 0.5480 | Buffer: 23742
+Episode 30/50 | Avg Reward: -198.10 | Epsilon: 0.5212 | Buffer: 25723
+Episode 40/50 | Avg Reward: -188.30 | Epsilon: 0.4957 | Buffer: 27606
+Episode 50/50 | Avg Reward: -195.50 | Epsilon: 0.4715 | Buffer: 29561
+  control @ 150: media voraz -200.00, banderas 0/20
+Episode 10/50 | Avg Reward: -194.00 | Epsilon: 0.4484 | Buffer: 31501
+Episode 20/50 | Avg Reward: -188.80 | Epsilon: 0.4265 | Buffer: 33389
+Episode 30/50 | Avg Reward: -200.00 | Epsilon: 0.4057 | Buffer: 35389
+Episode 40/50 | Avg Reward: -187.90 | Epsilon: 0.3858 | Buffer: 37268
+Episode 50/50 | Avg Reward: -195.80 | Epsilon: 0.3670 | Buffer: 39226
+  control @ 200: media voraz -200.00, banderas 0/20
+Episode 10/50 | Avg Reward: -200.00 | Epsilon: 0.3490 | Buffer: 41226
+Episode 20/50 | Avg Reward: -195.80 | Epsilon: 0.3320 | Buffer: 43184
+Episode 30/50 | Avg Reward: -200.00 | Epsilon: 0.3157 | Buffer: 45184
+Episode 40/50 | Avg Reward: -200.00 | Epsilon: 0.3003 | Buffer: 47184
+Episode 50/50 | Avg Reward: -200.00 | Epsilon: 0.2856 | Buffer: 49184
+  control @ 250: media voraz -200.00, banderas 0/20
+Episode 10/50 | Avg Reward: -200.00 | Epsilon: 0.2716 | Buffer: 51184
+Episode 20/50 | Avg Reward: -196.90 | Epsilon: 0.2584 | Buffer: 53153
+Episode 30/50 | Avg Reward: -195.30 | Epsilon: 0.2457 | Buffer: 55106
+Episode 40/50 | Avg Reward: -200.00 | Epsilon: 0.2337 | Buffer: 57106
+Episode 50/50 | Avg Reward: -194.30 | Epsilon: 0.2223 | Buffer: 59049
+  control @ 300: media voraz -200.00, banderas 0/20
+Episode 10/50 | Avg Reward: -189.10 | Epsilon: 0.2114 | Buffer: 60940
+Episode 20/50 | Avg Reward: -194.20 | Epsilon: 0.2011 | Buffer: 62882
+Episode 30/50 | Avg Reward: -195.60 | Epsilon: 0.1913 | Buffer: 64838
+Episode 40/50 | Avg Reward: -192.70 | Epsilon: 0.1819 | Buffer: 66765
+Episode 50/50 | Avg Reward: -194.10 | Epsilon: 0.1730 | Buffer: 68706
+Saved DQN agent to saves/dqn_mountaincar.pt
+  control @ 350: media voraz -177.35, banderas 7/20
+Episode 10/50 | Avg Reward: -194.00 | Epsilon: 0.1646 | Buffer: 70646
+Episode 20/50 | Avg Reward: -186.30 | Epsilon: 0.1565 | Buffer: 72509
+Episode 30/50 | Avg Reward: -189.60 | Epsilon: 0.1489 | Buffer: 74405
+Episode 40/50 | Avg Reward: -199.10 | Epsilon: 0.1416 | Buffer: 76396
+Episode 50/50 | Avg Reward: -188.30 | Epsilon: 0.1347 | Buffer: 78279
+  control @ 400: media voraz -200.00, banderas 0/20
+Episode 10/50 | Avg Reward: -196.00 | Epsilon: 0.1281 | Buffer: 80239
+Episode 20/50 | Avg Reward: -193.80 | Epsilon: 0.1218 | Buffer: 82177
+Episode 30/50 | Avg Reward: -190.40 | Epsilon: 0.1159 | Buffer: 84081
+Episode 40/50 | Avg Reward: -195.00 | Epsilon: 0.1102 | Buffer: 86031
+Episode 50/50 | Avg Reward: -192.50 | Epsilon: 0.1048 | Buffer: 87956
+  control @ 450: media voraz -197.80, banderas 1/20
+Episode 10/50 | Avg Reward: -200.00 | Epsilon: 0.0997 | Buffer: 89956
+Episode 20/50 | Avg Reward: -194.20 | Epsilon: 0.0948 | Buffer: 91898
+Episode 30/50 | Avg Reward: -200.00 | Epsilon: 0.0902 | Buffer: 93898
+Episode 40/50 | Avg Reward: -184.50 | Epsilon: 0.0858 | Buffer: 95743
+Episode 50/50 | Avg Reward: -196.80 | Epsilon: 0.0816 | Buffer: 97711
+  control @ 500: media voraz -200.00, banderas 0/20
+Episode 10/50 | Avg Reward: -188.40 | Epsilon: 0.0776 | Buffer: 99595
+Episode 20/50 | Avg Reward: -199.00 | Epsilon: 0.0738 | Buffer: 100000
+Episode 30/50 | Avg Reward: -199.50 | Epsilon: 0.0702 | Buffer: 100000
+Episode 40/50 | Avg Reward: -187.40 | Epsilon: 0.0668 | Buffer: 100000
+Episode 50/50 | Avg Reward: -183.50 | Epsilon: 0.0635 | Buffer: 100000
+Saved DQN agent to saves/dqn_mountaincar.pt
+  control @ 550: media voraz -118.50, banderas 19/20
+Episode 10/50 | Avg Reward: -186.30 | Epsilon: 0.0604 | Buffer: 100000
+Episode 20/50 | Avg Reward: -191.00 | Epsilon: 0.0574 | Buffer: 100000
+Episode 30/50 | Avg Reward: -195.90 | Epsilon: 0.0546 | Buffer: 100000
+Episode 40/50 | Avg Reward: -184.80 | Epsilon: 0.0520 | Buffer: 100000
+Episode 50/50 | Avg Reward: -188.80 | Epsilon: 0.0494 | Buffer: 100000
+  control @ 600: media voraz -200.00, banderas 0/20
+Episode 10/50 | Avg Reward: -190.30 | Epsilon: 0.0470 | Buffer: 100000
+Episode 20/50 | Avg Reward: -188.20 | Epsilon: 0.0447 | Buffer: 100000
+Episode 30/50 | Avg Reward: -196.00 | Epsilon: 0.0425 | Buffer: 100000
+Episode 40/50 | Avg Reward: -187.50 | Epsilon: 0.0404 | Buffer: 100000
+Episode 50/50 | Avg Reward: -198.20 | Epsilon: 0.0385 | Buffer: 100000
+  control @ 650: media voraz -200.00, banderas 0/20
+Episode 10/50 | Avg Reward: -190.30 | Epsilon: 0.0366 | Buffer: 100000
+Episode 20/50 | Avg Reward: -192.30 | Epsilon: 0.0348 | Buffer: 100000
+Episode 30/50 | Avg Reward: -181.40 | Epsilon: 0.0331 | Buffer: 100000
+Episode 40/50 | Avg Reward: -186.50 | Epsilon: 0.0315 | Buffer: 100000
+Episode 50/50 | Avg Reward: -192.10 | Epsilon: 0.0299 | Buffer: 100000
+  control @ 700: media voraz -191.70, banderas 3/20
+Episode 10/50 | Avg Reward: -166.40 | Epsilon: 0.0285 | Buffer: 100000
+Episode 20/50 | Avg Reward: -157.10 | Epsilon: 0.0271 | Buffer: 100000
+Episode 30/50 | Avg Reward: -179.90 | Epsilon: 0.0258 | Buffer: 100000
+Episode 40/50 | Avg Reward: -161.70 | Epsilon: 0.0245 | Buffer: 100000
+Episode 50/50 | Avg Reward: -169.10 | Epsilon: 0.0233 | Buffer: 100000
+  control @ 750: media voraz -129.75, banderas 16/20
+Episode 10/50 | Avg Reward: -171.70 | Epsilon: 0.0222 | Buffer: 100000
+Episode 20/50 | Avg Reward: -162.30 | Epsilon: 0.0211 | Buffer: 100000
+Episode 30/50 | Avg Reward: -157.80 | Epsilon: 0.0200 | Buffer: 100000
+Episode 40/50 | Avg Reward: -156.70 | Epsilon: 0.0191 | Buffer: 100000
+Episode 50/50 | Avg Reward: -146.20 | Epsilon: 0.0181 | Buffer: 100000
+  control @ 800: media voraz -158.20, banderas 10/20
+Episode 10/50 | Avg Reward: -132.10 | Epsilon: 0.0172 | Buffer: 100000
+Episode 20/50 | Avg Reward: -168.70 | Epsilon: 0.0164 | Buffer: 100000
+Episode 30/50 | Avg Reward: -162.50 | Epsilon: 0.0156 | Buffer: 100000
+Episode 40/50 | Avg Reward: -150.60 | Epsilon: 0.0148 | Buffer: 100000
+Episode 50/50 | Avg Reward: -137.10 | Epsilon: 0.0141 | Buffer: 100000
+  control @ 850: media voraz -162.40, banderas 8/20
+Episode 10/50 | Avg Reward: -147.80 | Epsilon: 0.0134 | Buffer: 100000
+Episode 20/50 | Avg Reward: -161.20 | Epsilon: 0.0128 | Buffer: 100000
+Episode 30/50 | Avg Reward: -171.90 | Epsilon: 0.0121 | Buffer: 100000
+Episode 40/50 | Avg Reward: -164.20 | Epsilon: 0.0115 | Buffer: 100000
+Episode 50/50 | Avg Reward: -140.10 | Epsilon: 0.0110 | Buffer: 100000
+  control @ 900: media voraz -175.85, banderas 5/20
+Episode 10/50 | Avg Reward: -156.90 | Epsilon: 0.0104 | Buffer: 100000
+Episode 20/50 | Avg Reward: -172.20 | Epsilon: 0.0100 | Buffer: 100000
+Episode 30/50 | Avg Reward: -164.20 | Epsilon: 0.0100 | Buffer: 100000
+Episode 40/50 | Avg Reward: -162.20 | Epsilon: 0.0100 | Buffer: 100000
+Episode 50/50 | Avg Reward: -155.90 | Epsilon: 0.0100 | Buffer: 100000
+Saved DQN agent to saves/dqn_mountaincar.pt
+  control @ 950: media voraz -102.35, banderas 20/20
+Episode 10/50 | Avg Reward: -143.10 | Epsilon: 0.0100 | Buffer: 100000
+Episode 20/50 | Avg Reward: -156.30 | Epsilon: 0.0100 | Buffer: 100000
+Episode 30/50 | Avg Reward: -162.60 | Epsilon: 0.0100 | Buffer: 100000
+Episode 40/50 | Avg Reward: -138.70 | Epsilon: 0.0100 | Buffer: 100000
+Episode 50/50 | Avg Reward: -141.80 | Epsilon: 0.0100 | Buffer: 100000
+  control @ 1000: media voraz -188.95, banderas 2/20
+Episode 10/50 | Avg Reward: -146.40 | Epsilon: 0.0100 | Buffer: 100000
+Episode 20/50 | Avg Reward: -125.80 | Epsilon: 0.0100 | Buffer: 100000
+Episode 30/50 | Avg Reward: -127.80 | Epsilon: 0.0100 | Buffer: 100000
+Episode 40/50 | Avg Reward: -156.30 | Epsilon: 0.0100 | Buffer: 100000
+Episode 50/50 | Avg Reward: -133.80 | Epsilon: 0.0100 | Buffer: 100000
+  control @ 1050: media voraz -110.55, banderas 20/20
+Episode 10/50 | Avg Reward: -155.90 | Epsilon: 0.0100 | Buffer: 100000
+Episode 20/50 | Avg Reward: -132.20 | Epsilon: 0.0100 | Buffer: 100000
+Episode 30/50 | Avg Reward: -158.60 | Epsilon: 0.0100 | Buffer: 100000
+Episode 40/50 | Avg Reward: -133.00 | Epsilon: 0.0100 | Buffer: 100000
+Episode 50/50 | Avg Reward: -148.40 | Epsilon: 0.0100 | Buffer: 100000
+  control @ 1100: media voraz -116.75, banderas 19/20
+Episode 10/50 | Avg Reward: -125.00 | Epsilon: 0.0100 | Buffer: 100000
+Episode 20/50 | Avg Reward: -152.90 | Epsilon: 0.0100 | Buffer: 100000
+Episode 30/50 | Avg Reward: -113.40 | Epsilon: 0.0100 | Buffer: 100000
+Episode 40/50 | Avg Reward: -118.90 | Epsilon: 0.0100 | Buffer: 100000
+Episode 50/50 | Avg Reward: -128.20 | Epsilon: 0.0100 | Buffer: 100000
+  control @ 1150: media voraz -105.90, banderas 20/20
+Episode 10/50 | Avg Reward: -123.80 | Epsilon: 0.0100 | Buffer: 100000
+Episode 20/50 | Avg Reward: -119.70 | Epsilon: 0.0100 | Buffer: 100000
+Episode 30/50 | Avg Reward: -121.00 | Epsilon: 0.0100 | Buffer: 100000
+Episode 40/50 | Avg Reward: -107.60 | Epsilon: 0.0100 | Buffer: 100000
+Episode 50/50 | Avg Reward: -117.10 | Epsilon: 0.0100 | Buffer: 100000
+  control @ 1200: media voraz -103.05, banderas 20/20
+Episode 10/50 | Avg Reward: -112.50 | Epsilon: 0.0100 | Buffer: 100000
+Episode 20/50 | Avg Reward: -118.00 | Epsilon: 0.0100 | Buffer: 100000
+Episode 30/50 | Avg Reward: -125.20 | Epsilon: 0.0100 | Buffer: 100000
+Episode 40/50 | Avg Reward: -131.00 | Epsilon: 0.0100 | Buffer: 100000
+Episode 50/50 | Avg Reward: -118.80 | Epsilon: 0.0100 | Buffer: 100000
+  control @ 1250: media voraz -104.65, banderas 20/20
+Episode 10/50 | Avg Reward: -120.80 | Epsilon: 0.0100 | Buffer: 100000
+Episode 20/50 | Avg Reward: -150.60 | Epsilon: 0.0100 | Buffer: 100000
+Episode 30/50 | Avg Reward: -132.50 | Epsilon: 0.0100 | Buffer: 100000
+Episode 40/50 | Avg Reward: -104.40 | Epsilon: 0.0100 | Buffer: 100000
+Episode 50/50 | Avg Reward: -126.70 | Epsilon: 0.0100 | Buffer: 100000
+  control @ 1300: media voraz -109.95, banderas 20/20
+Episode 10/50 | Avg Reward: -117.20 | Epsilon: 0.0100 | Buffer: 100000
+Episode 20/50 | Avg Reward: -113.30 | Epsilon: 0.0100 | Buffer: 100000
+Episode 30/50 | Avg Reward: -114.40 | Epsilon: 0.0100 | Buffer: 100000
+Episode 40/50 | Avg Reward: -135.00 | Epsilon: 0.0100 | Buffer: 100000
+Episode 50/50 | Avg Reward: -120.70 | Epsilon: 0.0100 | Buffer: 100000
+  control @ 1350: media voraz -109.30, banderas 20/20
+Episode 10/50 | Avg Reward: -111.80 | Epsilon: 0.0100 | Buffer: 100000
+Episode 20/50 | Avg Reward: -122.30 | Epsilon: 0.0100 | Buffer: 100000
+Episode 30/50 | Avg Reward: -119.70 | Epsilon: 0.0100 | Buffer: 100000
+Episode 40/50 | Avg Reward: -132.10 | Epsilon: 0.0100 | Buffer: 100000
+Episode 50/50 | Avg Reward: -148.50 | Epsilon: 0.0100 | Buffer: 100000
+  control @ 1400: media voraz -110.30, banderas 20/20
+Episode 10/50 | Avg Reward: -135.60 | Epsilon: 0.0100 | Buffer: 100000
+Episode 20/50 | Avg Reward: -123.90 | Epsilon: 0.0100 | Buffer: 100000
+Episode 30/50 | Avg Reward: -125.60 | Epsilon: 0.0100 | Buffer: 100000
+Episode 40/50 | Avg Reward: -143.60 | Epsilon: 0.0100 | Buffer: 100000
+Episode 50/50 | Avg Reward: -110.30 | Epsilon: 0.0100 | Buffer: 100000
+  control @ 1450: media voraz -104.55, banderas 20/20
+Episode 10/50 | Avg Reward: -119.40 | Epsilon: 0.0100 | Buffer: 100000
+Episode 20/50 | Avg Reward: -115.50 | Epsilon: 0.0100 | Buffer: 100000
+Episode 30/50 | Avg Reward: -105.20 | Epsilon: 0.0100 | Buffer: 100000
+Episode 40/50 | Avg Reward: -120.00 | Epsilon: 0.0100 | Buffer: 100000
+Episode 50/50 | Avg Reward: -125.70 | Epsilon: 0.0100 | Buffer: 100000
+  control @ 1500: media voraz -102.80, banderas 20/20
+Episode 10/50 | Avg Reward: -129.60 | Epsilon: 0.0100 | Buffer: 100000
+Episode 20/50 | Avg Reward: -131.90 | Epsilon: 0.0100 | Buffer: 100000
+Episode 30/50 | Avg Reward: -118.40 | Epsilon: 0.0100 | Buffer: 100000
+Episode 40/50 | Avg Reward: -142.20 | Epsilon: 0.0100 | Buffer: 100000
+Episode 50/50 | Avg Reward: -132.00 | Epsilon: 0.0100 | Buffer: 100000
+  control @ 1550: media voraz -131.10, banderas 18/20
+Episode 10/50 | Avg Reward: -151.60 | Epsilon: 0.0100 | Buffer: 100000
+Episode 20/50 | Avg Reward: -152.20 | Epsilon: 0.0100 | Buffer: 100000
+Episode 30/50 | Avg Reward: -152.20 | Epsilon: 0.0100 | Buffer: 100000
+Episode 40/50 | Avg Reward: -120.30 | Epsilon: 0.0100 | Buffer: 100000
+Episode 50/50 | Avg Reward: -134.20 | Epsilon: 0.0100 | Buffer: 100000
+  control @ 1600: media voraz -118.80, banderas 20/20
+Episode 10/50 | Avg Reward: -134.90 | Epsilon: 0.0100 | Buffer: 100000
+Episode 20/50 | Avg Reward: -124.80 | Epsilon: 0.0100 | Buffer: 100000
+Episode 30/50 | Avg Reward: -124.90 | Epsilon: 0.0100 | Buffer: 100000
+Episode 40/50 | Avg Reward: -116.90 | Epsilon: 0.0100 | Buffer: 100000
+Episode 50/50 | Avg Reward: -143.30 | Epsilon: 0.0100 | Buffer: 100000
+  control @ 1650: media voraz -105.50, banderas 20/20
+Episode 10/50 | Avg Reward: -141.60 | Epsilon: 0.0100 | Buffer: 100000
+Episode 20/50 | Avg Reward: -122.10 | Epsilon: 0.0100 | Buffer: 100000
+Episode 30/50 | Avg Reward: -112.40 | Epsilon: 0.0100 | Buffer: 100000
+Episode 40/50 | Avg Reward: -125.60 | Epsilon: 0.0100 | Buffer: 100000
+Episode 50/50 | Avg Reward: -115.40 | Epsilon: 0.0100 | Buffer: 100000
+  control @ 1700: media voraz -105.95, banderas 20/20
+Episode 10/50 | Avg Reward: -125.70 | Epsilon: 0.0100 | Buffer: 100000
+Episode 20/50 | Avg Reward: -126.80 | Epsilon: 0.0100 | Buffer: 100000
+Episode 30/50 | Avg Reward: -125.30 | Epsilon: 0.0100 | Buffer: 100000
+Episode 40/50 | Avg Reward: -131.40 | Epsilon: 0.0100 | Buffer: 100000
+Episode 50/50 | Avg Reward: -117.30 | Epsilon: 0.0100 | Buffer: 100000
+  control @ 1750: media voraz -103.45, banderas 20/20
+Episode 10/50 | Avg Reward: -142.80 | Epsilon: 0.0100 | Buffer: 100000
+Episode 20/50 | Avg Reward: -107.80 | Epsilon: 0.0100 | Buffer: 100000
+Episode 30/50 | Avg Reward: -135.20 | Epsilon: 0.0100 | Buffer: 100000
+Episode 40/50 | Avg Reward: -122.70 | Epsilon: 0.0100 | Buffer: 100000
+Episode 50/50 | Avg Reward: -134.60 | Epsilon: 0.0100 | Buffer: 100000
+  control @ 1800: media voraz -104.10, banderas 20/20
+Episode 10/50 | Avg Reward: -151.40 | Epsilon: 0.0100 | Buffer: 100000
+Episode 20/50 | Avg Reward: -140.10 | Epsilon: 0.0100 | Buffer: 100000
+Episode 30/50 | Avg Reward: -111.10 | Epsilon: 0.0100 | Buffer: 100000
+Episode 40/50 | Avg Reward: -123.60 | Epsilon: 0.0100 | Buffer: 100000
+Episode 50/50 | Avg Reward: -126.40 | Epsilon: 0.0100 | Buffer: 100000
+  control @ 1850: media voraz -175.70, banderas 5/20
+Episode 10/50 | Avg Reward: -138.20 | Epsilon: 0.0100 | Buffer: 100000
+Episode 20/50 | Avg Reward: -127.00 | Epsilon: 0.0100 | Buffer: 100000
+Episode 30/50 | Avg Reward: -129.20 | Epsilon: 0.0100 | Buffer: 100000
+Episode 40/50 | Avg Reward: -120.90 | Epsilon: 0.0100 | Buffer: 100000
+Episode 50/50 | Avg Reward: -145.50 | Epsilon: 0.0100 | Buffer: 100000
+  control @ 1900: media voraz -111.15, banderas 20/20
+Episode 10/50 | Avg Reward: -116.90 | Epsilon: 0.0100 | Buffer: 100000
+Episode 20/50 | Avg Reward: -133.90 | Epsilon: 0.0100 | Buffer: 100000
+Episode 30/50 | Avg Reward: -129.80 | Epsilon: 0.0100 | Buffer: 100000
+Episode 40/50 | Avg Reward: -122.10 | Epsilon: 0.0100 | Buffer: 100000
+Episode 50/50 | Avg Reward: -129.00 | Epsilon: 0.0100 | Buffer: 100000
+  control @ 1950: media voraz -116.60, banderas 20/20
+Episode 10/50 | Avg Reward: -133.60 | Epsilon: 0.0100 | Buffer: 100000
+Episode 20/50 | Avg Reward: -125.70 | Epsilon: 0.0100 | Buffer: 100000
+Episode 30/50 | Avg Reward: -112.90 | Epsilon: 0.0100 | Buffer: 100000
+Episode 40/50 | Avg Reward: -106.50 | Epsilon: 0.0100 | Buffer: 100000
+Episode 50/50 | Avg Reward: -129.60 | Epsilon: 0.0100 | Buffer: 100000
+Saved DQN agent to saves/dqn_mountaincar.pt
+  control @ 2000: media voraz -100.15, banderas 20/20
+Episode 10/50 | Avg Reward: -127.00 | Epsilon: 0.0100 | Buffer: 100000
+Episode 20/50 | Avg Reward: -134.40 | Epsilon: 0.0100 | Buffer: 100000
+Episode 30/50 | Avg Reward: -118.90 | Epsilon: 0.0100 | Buffer: 100000
+Episode 40/50 | Avg Reward: -132.80 | Epsilon: 0.0100 | Buffer: 100000
+Episode 50/50 | Avg Reward: -133.60 | Epsilon: 0.0100 | Buffer: 100000
+  control @ 2050: media voraz -105.40, banderas 20/20
+Episode 10/50 | Avg Reward: -112.60 | Epsilon: 0.0100 | Buffer: 100000
+Episode 20/50 | Avg Reward: -120.80 | Epsilon: 0.0100 | Buffer: 100000
+Episode 30/50 | Avg Reward: -121.60 | Epsilon: 0.0100 | Buffer: 100000
+Episode 40/50 | Avg Reward: -126.70 | Epsilon: 0.0100 | Buffer: 100000
+Episode 50/50 | Avg Reward: -112.00 | Epsilon: 0.0100 | Buffer: 100000
+  control @ 2100: media voraz -103.45, banderas 20/20
+Episode 10/50 | Avg Reward: -122.30 | Epsilon: 0.0100 | Buffer: 100000
+Episode 20/50 | Avg Reward: -109.70 | Epsilon: 0.0100 | Buffer: 100000
+Episode 30/50 | Avg Reward: -109.40 | Epsilon: 0.0100 | Buffer: 100000
+Episode 40/50 | Avg Reward: -138.20 | Epsilon: 0.0100 | Buffer: 100000
+Episode 50/50 | Avg Reward: -117.50 | Epsilon: 0.0100 | Buffer: 100000
+  control @ 2150: media voraz -162.05, banderas 9/20
+Episode 10/50 | Avg Reward: -120.20 | Epsilon: 0.0100 | Buffer: 100000
+Episode 20/50 | Avg Reward: -125.30 | Epsilon: 0.0100 | Buffer: 100000
+Episode 30/50 | Avg Reward: -114.10 | Epsilon: 0.0100 | Buffer: 100000
+Episode 40/50 | Avg Reward: -136.60 | Epsilon: 0.0100 | Buffer: 100000
+Episode 50/50 | Avg Reward: -108.80 | Epsilon: 0.0100 | Buffer: 100000
+  control @ 2200: media voraz -104.25, banderas 20/20
+Episode 10/50 | Avg Reward: -129.70 | Epsilon: 0.0100 | Buffer: 100000
+Episode 20/50 | Avg Reward: -116.10 | Epsilon: 0.0100 | Buffer: 100000
+Episode 30/50 | Avg Reward: -125.90 | Epsilon: 0.0100 | Buffer: 100000
+Episode 40/50 | Avg Reward: -151.00 | Epsilon: 0.0100 | Buffer: 100000
+Episode 50/50 | Avg Reward: -142.10 | Epsilon: 0.0100 | Buffer: 100000
+  control @ 2250: media voraz -110.50, banderas 20/20
+Episode 10/50 | Avg Reward: -127.10 | Epsilon: 0.0100 | Buffer: 100000
+Episode 20/50 | Avg Reward: -142.30 | Epsilon: 0.0100 | Buffer: 100000
+Episode 30/50 | Avg Reward: -127.00 | Epsilon: 0.0100 | Buffer: 100000
+Episode 40/50 | Avg Reward: -131.50 | Epsilon: 0.0100 | Buffer: 100000
+Episode 50/50 | Avg Reward: -118.10 | Epsilon: 0.0100 | Buffer: 100000
+  control @ 2300: media voraz -114.95, banderas 20/20
+Episode 10/50 | Avg Reward: -114.20 | Epsilon: 0.0100 | Buffer: 100000
+Episode 20/50 | Avg Reward: -140.60 | Epsilon: 0.0100 | Buffer: 100000
+Episode 30/50 | Avg Reward: -133.10 | Epsilon: 0.0100 | Buffer: 100000
+Episode 40/50 | Avg Reward: -139.40 | Epsilon: 0.0100 | Buffer: 100000
+Episode 50/50 | Avg Reward: -146.90 | Epsilon: 0.0100 | Buffer: 100000
+  control @ 2350: media voraz -110.55, banderas 20/20
+Episode 10/50 | Avg Reward: -120.40 | Epsilon: 0.0100 | Buffer: 100000
+Episode 20/50 | Avg Reward: -121.30 | Epsilon: 0.0100 | Buffer: 100000
+Episode 30/50 | Avg Reward: -132.10 | Epsilon: 0.0100 | Buffer: 100000
+Episode 40/50 | Avg Reward: -120.30 | Epsilon: 0.0100 | Buffer: 100000
+Episode 50/50 | Avg Reward: -139.40 | Epsilon: 0.0100 | Buffer: 100000
+  control @ 2400: media voraz -107.30, banderas 20/20
+Episode 10/50 | Avg Reward: -118.20 | Epsilon: 0.0100 | Buffer: 100000
+Episode 20/50 | Avg Reward: -114.90 | Epsilon: 0.0100 | Buffer: 100000
+Episode 30/50 | Avg Reward: -134.10 | Epsilon: 0.0100 | Buffer: 100000
+Episode 40/50 | Avg Reward: -118.50 | Epsilon: 0.0100 | Buffer: 100000
+Episode 50/50 | Avg Reward: -142.80 | Epsilon: 0.0100 | Buffer: 100000
+Saved DQN agent to saves/dqn_mountaincar.pt
+  control @ 2450: media voraz -99.85, banderas 20/20
+Episode 10/50 | Avg Reward: -117.50 | Epsilon: 0.0100 | Buffer: 100000
+Episode 20/50 | Avg Reward: -138.30 | Epsilon: 0.0100 | Buffer: 100000
+Episode 30/50 | Avg Reward: -117.80 | Epsilon: 0.0100 | Buffer: 100000
+Episode 40/50 | Avg Reward: -119.60 | Epsilon: 0.0100 | Buffer: 100000
+Episode 50/50 | Avg Reward: -137.70 | Epsilon: 0.0100 | Buffer: 100000
+  control @ 2500: media voraz -104.60, banderas 20/20
+{
+  "agente": "dqn",
+  "semilla": 7,
+  "episodios_entrenamiento": 2500,
+  "minutos_entrenamiento": 13.69,
+  "primer_episodio_con_bandera": 13,
+  "mejor_episodio_entrenamiento": -83.0,
+  "mejor_media_movil_100_entrenamiento": -117.16,
+  "punto_de_control_elegido": 2450,
+  "eval_episodios": 100,
+  "eval_media": -96.71,
+  "eval_desviacion": 7.63,
+  "eval_mejor": -83.0,
+  "eval_peor": -104.0,
+  "eval_banderas": 100,
+  "eval_media_ultimo_modelo": -99.88,
+  "eval_banderas_ultimo_modelo": 100
+}
