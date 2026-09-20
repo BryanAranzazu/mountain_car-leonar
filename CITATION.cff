@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "Si usa este repositorio, por favor cítelo con estos metadatos."
+title: "MountainCar-v0 con Q-Learning tabular y DQN: exploración persistente en un entorno de recompensa plana"
+type: software
+authors:
+  - family-names: "Socarrás Molina"
+    given-names: "Leonar"
+    affiliation: "Maestría en Inteligencia Artificial, Universidad de La Sabana"
+    email: "leonarsomo@unisabana.edu.co"
+abstract: >-
+  Comparación reproducible entre Q-Learning tabular y Deep Q-Network en MountainCar-v0.
+  Documenta por qué epsilon-greedy uniforme impide que DQN aprenda en un entorno de
+  recompensa plana y cómo una exploración con persistencia temporal lo corrige.
+keywords:
+  - aprendizaje por refuerzo
+  - Q-learning
+  - deep Q-network
+  - exploración
+  - MountainCar
+  - reproducibilidad
+license: Apache-2.0
+version: "1.0.0"
+date-released: "2026-09-20"
+references:
+  - type: software
+    title: "mountain_car: RL exercises on MountainCar-v0"
+    authors:
+      - family-names: "Muñoz Pérez"
+        given-names: "Emilio"
+    url: "https://github.com/emiliomunozai/mountain_car"
+    notes: "Repositorio base del curso, del que este trabajo es una obra derivada."
