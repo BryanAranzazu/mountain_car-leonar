@@ -84,7 +84,7 @@ El repositorio base trae escritos la CLI, los bucles de entrenamiento y la persi
 
 **Discretización (1a).** Cada dimensión se parte en 20 intervalos con `np.digitize` sobre los bordes interiores, lo que da una rejilla de 20 × 20 = 400 celdas. La clave de la tabla es la tupla `(i_posición, i_velocidad)`. Como `np.digitize` con bordes interiores devuelve índices entre 0 y 19, un valor fuera de rango cae en la celda extrema y no hace falta recortarlo.
 
-**Tabla Q.** Es un `defaultdict` que entrega un vector de tres ceros para cualquier celda no visitada. Ese cero inicial tiene un efecto que no es evidente: toda recompensa real es negativa, de manera que una acción jamás probada (valor 0) siempre parece mejor que una probada (valor negativo). La tabla explora por optimismo aunque epsilon sea pequeño, algo que Sutton y Barto (2018) señalan para este mismo problema (p. 245).
+**Tabla Q.** Es un `defaultdict` que entrega un vector de tres ceros para cualquier celda no visitada. Ese cero inicial tiene un efecto que no es evidente: toda recompensa real es negativa, de manera que una acción jamás probada (valor 0) siempre parece mejor que una probada (valor negativo). La tabla explora por optimismo aunque epsilon sea pequeño, algo que Sutton y Barto (2018) señalan para este mismo problema (p. 246).
 
 **Selección de acción (1b).** Epsilon-greedy. Con `deterministic=True` jamás explora, condición de la que dependen la evaluación y el render.
 
