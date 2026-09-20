@@ -166,7 +166,7 @@ Ambos esquemas los dibujé a mano y los fotografié. No fueron generados con IA.
 
 ![Curva de entrenamiento de Q-Learning](resultados/qlearning_curva.png)
 
-**Recompensa lograda: -123.0 ± 16.4 en 100 episodios voraces, con bandera en 98 de 100** (mejor episodio -110, peor -200). Corresponde al punto de control del episodio 10 500. La CLI del curso, sobre ese mismo archivo, da -117.7 ± 3.6 con 10 de 10 (`resultados/qlearning_cli_eval.txt`). Cifras completas en `resultados/qlearning_evaluacion.json`.
+**Recompensa lograda: -123.0 ± 16.4 en 100 episodios voraces, con bandera en 98 de 100** (mejor episodio -110, peor -200). Corresponde al punto de control del episodio 10 500. La CLI del curso, sobre ese mismo archivo, dio -117.7 ± 3.6 con 10 de 10 en la corrida que guardé (`resultados/qlearning_cli_eval.txt`); su evaluación usa solo 10 episodios sin semilla, así que cambia de una ejecución a otra. Cifras completas en `resultados/qlearning_evaluacion.json`.
 
 Comentario. La tabla pasa los primeros 1 620 episodios en -200; la primera bandera llega en el 1 621, cuando epsilon todavía ronda 0.44. Desde ahí mejora a saltos hasta su mejor tramo, cerca del episodio 10 500, y después no se estabiliza. En la segunda mitad del entrenamiento los controles voraces oscilan entre -120 y -178, y el agente del último episodio evalúa en -153.9, treinta puntos peor que el punto de control. Por eso guardo el mejor punto y no el último. Con las semillas 1, 2 y 3 y los mismos hiperparámetros, el agente del último episodio evaluó en -131.0, -132.9 y -164.1, lo que sitúa la referencia de -133 del repositorio base dentro de lo esperable y confirma que la variación entre corridas es grande.
 
