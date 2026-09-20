@@ -1,5 +1,13 @@
 # Registro de cambios
 
+## 1.1.0 (2026-09-20)
+
+Visualización.
+
+- Figuras rehechas con una paleta validada para daltonismo y contraste, en tema claro y oscuro; el README muestra la variante que corresponde al tema del lector.
+- Figuras nuevas: mapa de política, mapa de valor, diagnóstico de exploración y eficiencia en muestras.
+- GIF de un episodio voraz de cada agente (`scripts/animar.py`).
+
 ## 1.0.0 (2026-09-20)
 
 Entrega del Taller 1, Unidad 2.

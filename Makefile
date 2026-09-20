@@ -9,7 +9,7 @@ ayuda:
 	@echo "make diagnostico         cuenta banderas segun la persistencia de la exploracion"
 	@echo "make entrenar-qlearning  20 000 episodios, semilla 7"
 	@echo "make entrenar-dqn        2 500 episodios, semilla 7 (unos 14 min en CPU)"
-	@echo "make figuras             regenera las curvas PNG"
+	@echo "make figuras             regenera figuras (tema claro y oscuro) y GIF"
 	@echo "make reproducir          todo lo anterior, en orden"
 
 instalar:
@@ -36,5 +36,6 @@ entrenar-dqn:
 
 figuras:
 	uv run --with matplotlib python scripts/graficar.py
+	uv run --with pillow python scripts/animar.py
 
 reproducir: instalar lint pruebas diagnostico entrenar-qlearning entrenar-dqn figuras

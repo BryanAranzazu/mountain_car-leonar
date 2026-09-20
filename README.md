@@ -17,6 +17,14 @@ Comparo dos agentes de aprendizaje por refuerzo en MountainCar-v0: Q-Learning ta
 
 **Palabras clave:** aprendizaje por refuerzo, Q-learning, DQN, exploración, recompensa plana, reproducibilidad.
 
+### Los dos agentes entrenados
+
+| Q-Learning tabular: 113 pasos | DQN: 104 pasos |
+|:---:|:---:|
+| ![Episodio voraz del agente Q-Learning](resultados/figuras/agente_qlearning.gif) | ![Episodio voraz del agente DQN](resultados/figuras/agente_dqn.gif) |
+
+Un episodio sin exploración de cada agente, con la misma semilla de inicio. Ambos retroceden primero para tomar impulso.
+
 ### Resultados principales
 
 Cloné el repositorio del curso, completé los tres ejercicios que venían como plantillas vacías (`EXERCISES.md`), entrené los dos agentes y dejé aquí el código, los registros y las curvas.
@@ -92,7 +100,8 @@ Reproducir el experimento completo desde cero (misma semilla, 7). `make reproduc
 uv run python scripts/diagnostico_exploracion.py                                  # unos 40 s
 uv run python scripts/experimento.py qlearning --episodes 20000 --chunk 500       # 2 a 5 min
 OMP_NUM_THREADS=1 uv run python scripts/experimento.py dqn --episodes 2500 --chunk 50   # unos 14 min en CPU
-uv run --with matplotlib python scripts/graficar.py
+uv run --with matplotlib python scripts/graficar.py    # figuras, tema claro y oscuro
+uv run --with pillow python scripts/animar.py          # GIF de cada agente
 ```
 
 `OMP_NUM_THREADS=1` hace falta. La red es tan pequeña que repartir cada multiplicación entre varios hilos cuesta más que hacerla; en la máquina de la corrida reportada (CPU de 2 núcleos), sin esa variable el entrenamiento de DQN avanzaba a unos 20 episodios por minuto y con ella a unos 180.
@@ -157,6 +166,11 @@ Con los ejercicios 2a y 2b correctos, DQN se quedó clavado en -200. Antes de to
 | 0.95 | **32 / 300** | 25.1 |
 | 0.98 | 17 / 300 | 47.3 |
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="resultados/figuras/diagnostico_exploracion_oscuro.png">
+  <img alt="Episodios con bandera, de 300, según la probabilidad de repetir la acción exploratoria" src="resultados/figuras/diagnostico_exploracion_claro.png">
+</picture>
+
 Con sorteo independiente en cada paso, la racha media de una misma acción es de paso y medio. El carro necesita empujes sostenidos de unos veinte pasos, y la probabilidad de sacar veinte veces seguidas la misma acción entre tres es (1/3)^20, del orden de 3 en 10 000 millones. No se trata de mala suerte. Esa conducta queda fuera de lo que el sorteo uniforme puede producir.
 
 *La red aprendió bien lo que vio.* Entrené 500 episodios con `explore_repeat=0.0`, que reproduce el epsilon-greedy de libro: 0 banderas en 500 episodios, con 100 000 transiciones en memoria (`resultados/registros/dqn_sin_correccion.txt`). Si todas las transiciones valen -1 y ninguna termina, todas las acciones valen lo mismo en todos los estados. La red aprendió que nada de lo que hace importa, y con esos datos tenía razón. El fallo estaba aguas arriba del aprendizaje, en la recolección de datos.
@@ -187,7 +201,12 @@ Ambos esquemas los dibujé a mano y los fotografié. No fueron generados con IA.
 
 ## 5. Mejor resultado de Q-Learning
 
-![Curva de entrenamiento de Q-Learning](resultados/figuras/qlearning_curva.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="resultados/figuras/curvas_entrenamiento_oscuro.png">
+  <img alt="Curvas de entrenamiento de Q-Learning tabular y de DQN, con los controles voraces y el punto de control elegido" src="resultados/figuras/curvas_entrenamiento_claro.png">
+</picture>
+
+La figura muestra los dos agentes con el mismo eje vertical. Esta sección comenta el panel izquierdo; la sección 6, el derecho.
 
 **Recompensa lograda: -123.0 ± 16.4 en 100 episodios voraces, con bandera en 98 de 100** (mejor episodio -110, peor -200). Corresponde al punto de control del episodio 10 500. La CLI del curso, sobre ese mismo archivo, dio -117.7 ± 3.6 con 10 de 10 en la corrida que guardé (`resultados/registros/qlearning_cli_eval.txt`); su evaluación usa solo 10 episodios sin semilla, así que cambia de una ejecución a otra. Cifras completas en `resultados/metricas/qlearning_evaluacion.json`.
 
@@ -197,17 +216,18 @@ Veo dos causas para la oscilación. La tasa de aprendizaje es constante (0.1), y
 
 ## 6. Mejor resultado de DQN
 
-![Curva de entrenamiento de DQN](resultados/figuras/dqn_curva.png)
-
 **Recompensa lograda: -96.7 ± 7.6 en 100 episodios voraces, con bandera en 100 de 100** (mejor episodio -83, peor -104). Corresponde al punto de control del episodio 2 450. La CLI del curso da -96.6 ± 8.2 con 10 de 10 (`resultados/registros/dqn_cli_eval.txt`). Cifras completas en `resultados/metricas/dqn_evaluacion.json`.
 
 Comentario. Con la exploración persistente, la primera bandera aparece en el episodio 13. El primer control voraz con bandera llega en el episodio 350 y el primero por encima de -110 en el 950 (-102.4), tras unos 175 000 pasos de entorno. Desde el episodio 1 050 la mayoría de los controles queda entre -100 y -117. Incluso el peor episodio de la evaluación (-104) supera al mejor de la tabla (-110).
 
-Dos rasgos de la curva merecen explicación. La media móvil de entrenamiento (línea gruesa, cerca de -125) queda por debajo de los controles voraces (puntos negros, cerca de -105). Es el costo de mi propia corrección: con epsilon en 0.01, casi todos los episodios incluyen alguna racha exploratoria de unos veinte pasos empujando hacia el lado equivocado, y eso añade pasos. El registro de entrenamiento mide al agente mientras explora; la evaluación lo mide sin explorar, y es la segunda la que describe la política aprendida. El otro rasgo son las caídas aisladas de los controles (-175.7 en el episodio 1 850, -162.1 en el 2 150), seguidas de recuperación en el tramo siguiente. DQN combina aproximación de funciones, bootstrapping y entrenamiento off-policy, la combinación que Sutton y Barto (2018) llaman tríada mortal (p. 264). La memoria de repetición y la red objetivo amortiguan esa inestabilidad sin eliminarla, y aquí se ve.
+Dos rasgos de la curva merecen explicación. La media móvil de entrenamiento (línea gruesa de color, cerca de -125) queda por debajo de los controles voraces (línea fina con puntos, cerca de -105). Es el costo de mi propia corrección: con epsilon en 0.01, casi todos los episodios incluyen alguna racha exploratoria de unos veinte pasos empujando hacia el lado equivocado, y eso añade pasos. El registro de entrenamiento mide al agente mientras explora; la evaluación lo mide sin explorar, y es la segunda la que describe la política aprendida. El otro rasgo son las caídas aisladas de los controles (-175.7 en el episodio 1 850, -162.1 en el 2 150), seguidas de recuperación en el tramo siguiente. DQN combina aproximación de funciones, bootstrapping y entrenamiento off-policy, la combinación que Sutton y Barto (2018) llaman tríada mortal (p. 264). La memoria de repetición y la red objetivo amortiguan esa inestabilidad sin eliminarla, y aquí se ve.
 
 ## 7. Comparación y estrategia elegida
 
-![Controles voraces de ambos agentes](resultados/figuras/comparacion_controles.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="resultados/figuras/eficiencia_en_muestras_oscuro.png">
+  <img alt="Desempeño voraz de ambos agentes frente a los pasos de entorno consumidos" src="resultados/figuras/eficiencia_en_muestras_claro.png">
+</picture>
 
 | Criterio | Q-Learning tabular | DQN |
 |---|---|---|
@@ -224,6 +244,22 @@ Dos rasgos de la curva merecen explicación. La media móvil de entrenamiento (l
 **Estabilidad.** Ninguno de los dos es estable en sentido estricto, y la desviación de los controles es parecida. La diferencia está en el nivel alrededor del cual oscilan y en la forma: la tabla deriva de manera continua entre políticas mediocres y buenas, mientras DQN se mantiene en una política buena y sufre caídas puntuales de las que se recupera. La teoría anticipa este resultado solo a medias. Q-learning converge con tabla y carece de garantía con aproximación no lineal (Silver, 2015, lección 6, diap. 32); en la práctica, las condiciones de esa garantía (tasa decreciente, estados de Markov) no se cumplen en mi configuración tabular.
 
 **Desempeño final.** La rejilla de 20 × 20 impone un techo. Una misma acción por celda es demasiado gruesa cerca de la cima, donde una diferencia pequeña de velocidad decide el resultado. Probé una rejilla de 30 × 30 con los mismos 20 000 episodios (semilla 1) y salió peor (-160.7 frente a -131.0 con 20 × 20): hay más celdas que llenar con la misma experiencia. La red evita ese dilema entre resolución y cantidad de datos.
+
+### Qué aprendió cada agente
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="resultados/figuras/mapa_politica_oscuro.png">
+  <img alt="Acción voraz de cada agente en cada estado, con la trayectoria de un episodio" src="resultados/figuras/mapa_politica_claro.png">
+</picture>
+
+Cada punto del plano es un estado (posición, velocidad) y el color indica la acción que el agente elige ahí. Los dos aprendieron la misma regla, que nadie les dio: empujar en el sentido en que el carro ya se mueve, hacia la izquierda cuando la velocidad es negativa y hacia la derecha cuando es positiva. La línea superpuesta es un episodio real, una espiral que gana amplitud hasta cruzar la bandera. La diferencia está en la textura. La tabla es un mosaico con celdas sueltas de "no empujar" y esquinas que nunca visitó; la red traza fronteras continuas y tiene una respuesta para todo el plano, incluidas regiones que la física del entorno no permite alcanzar.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="resultados/figuras/mapa_valor_oscuro.png">
+  <img alt="Costo restante estimado por cada agente en cada estado" src="resultados/figuras/mapa_valor_claro.png">
+</picture>
+
+El costo restante, −max Q(s, a), es la cantidad de pasos que el agente cree que le faltan. Es la misma lectura que Sutton y Barto (2018) presentan para este problema en su Figura 10.1 (p. 245). En ambos agentes el punto más caro es el fondo del valle con el carro quieto, y el costo cae hacia la bandera y hacia las velocidades altas. La tabla estima ese relieve celda por celda; la red lo aproxima con una superficie suave, lo que explica que generalice a estados vecinos con menos experiencia.
 
 **Limitaciones de este trabajo.** El resultado principal usa una sola semilla por método; la variación entre semillas que medí en la tabla (de -131 a -164 en el agente final) sugiere cautela antes de generalizar. No ajusté hiperparámetros en ninguno de los dos agentes, salvo `explore_repeat`, que escogí con el diagnóstico de la sección 3.3. La evaluación de DQN con varias semillas queda pendiente.
 
@@ -245,10 +281,11 @@ Dos rasgos de la curva merecen explicación. La media móvil de entrenamiento (l
 ├── scripts/
 │   ├── diagnostico_exploracion.py   # cuenta banderas según la persistencia de la exploración
 │   ├── experimento.py               # entrenamiento con semilla, controles y evaluación final
-│   └── graficar.py                  # curvas en PNG
+│   ├── graficar.py                  # figuras en tema claro y oscuro
+│   └── animar.py                    # GIF de un episodio voraz de cada agente
 ├── tests/                       # 11 pruebas rápidas de ambos agentes (corren en CI)
 ├── resultados/
-│   ├── figuras/                 # curvas de entrenamiento y comparación
+│   ├── figuras/                 # curvas, mapas de política y de valor, diagnóstico, GIF
 │   ├── metricas/                # historial por episodio (CSV) y resúmenes (JSON)
 │   └── registros/               # salidas de consola de cada corrida
 ├── saves/                       # agentes entrenados (mejor punto de control de cada uno)
@@ -267,14 +304,14 @@ Usé un asistente de IA como apoyo para programar las soluciones de los ejercici
 
 GitHub muestra el botón "Cite this repository" a partir de `CITATION.cff`. En APA 7:
 
-Socarrás Molina, L. (2026). *MountainCar-v0 con Q-Learning tabular y DQN: exploración persistente en un entorno de recompensa plana* (Versión 1.0.0) [Software]. GitHub. https://github.com/leonarsomo/mountain_car
+Socarrás Molina, L. (2026). *MountainCar-v0 con Q-Learning tabular y DQN: exploración persistente en un entorno de recompensa plana* (Versión 1.1.0) [Software]. GitHub. https://github.com/leonarsomo/mountain_car
 
 ```bibtex
 @software{socarras2026mountaincar,
   author  = {Socarr{\'a}s Molina, Leonar},
   title   = {MountainCar-v0 con Q-Learning tabular y DQN: exploraci{\'o}n persistente en un entorno de recompensa plana},
   year    = {2026},
-  version = {1.0.0},
+  version = {1.1.0},
   url     = {https://github.com/leonarsomo/mountain_car}
 }
 ```
