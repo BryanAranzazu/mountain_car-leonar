@@ -194,15 +194,33 @@ Una primera versión de la corrección falló y la dejo registrada. Repetía la 
 
 ## 4. Esquemas de entrenamiento (dibujos propios)
 
-Ambos esquemas los dibujé a mano y los fotografié. No fueron generados con IA.
+Los dos esquemas son de mi autoría. Primero los dibujé a mano y después los pasé a limpio en Excalidraw; debajo de cada uno dejo la foto del borrador del que salió. Para verificar que no faltara ningún paso me apoyé en guías de estudio, como explico en la sección 9.
 
-**Q-Learning tabular**
+### Q-Learning tabular
 
-![Esquema a mano del ciclo de entrenamiento de Q-Learning](esquemas/esquema_qlearning.jpg)
+El ciclo es estado → acción → recompensa → actualización. La observación se discretiza para obtener el estado, se elige la acción con ε-greedy, el entorno devuelve la recompensa y el siguiente estado, se calcula el objetivo TD y se actualiza la tabla. La flecha de la izquierda cierra el ciclo mientras el episodio continúa.
 
-**DQN**
+![Esquema propio del ciclo de entrenamiento de Q-Learning tabular](esquemas/esquema_qlearning.png)
 
-![Esquema a mano del ciclo de entrenamiento de DQN](esquemas/esquema_dqn.jpg)
+<details>
+<summary>Borrador a mano</summary>
+
+![Borrador a mano del esquema de Q-Learning](esquemas/borrador_qlearning.jpg)
+
+</details>
+
+### DQN
+
+Son dos bucles que se encuentran en la memoria de repetición (replay). En el de interacción, la red en línea elige la acción y cada transición se guarda en la memoria. En el de aprendizaje, un mini-lote al azar pasa por la red objetivo (target) para formar el objetivo de Bellman, y la pérdida actualiza solo los pesos de la red en línea. Cada 10 episodios esos pesos se copian a la red objetivo.
+
+![Esquema propio del ciclo de entrenamiento de DQN](esquemas/esquema_dqn.png)
+
+<details>
+<summary>Borrador a mano</summary>
+
+![Borrador a mano del esquema de DQN](esquemas/borrador_dqn.jpg)
+
+</details>
 
 ## 5. Mejor resultado de Q-Learning
 
@@ -295,7 +313,7 @@ El costo restante, −max Q(s, a), es la cantidad de pasos que el agente cree qu
 │   ├── metricas/                # historial por episodio (CSV) y resúmenes (JSON)
 │   └── registros/               # salidas de consola de cada corrida
 ├── saves/                       # agentes entrenados (mejor punto de control de cada uno)
-├── esquemas/                    # dibujos propios de los dos ciclos de entrenamiento
+├── esquemas/                    # esquemas propios de los dos ciclos y sus borradores a mano
 └── docs/
     ├── tarjetas_de_modelo.md        # ficha de cada agente: datos, resultado, límites
     ├── lista_de_reproducibilidad.md # qué se puede reproducir y dónde está la evidencia
@@ -304,7 +322,7 @@ El costo restante, −max Q(s, a), es la cantidad de pasos que el agente cree qu
 
 ## 9. Declaración de uso de IA
 
-Usé un asistente de IA como apoyo para programar las soluciones de los ejercicios, ejecutar los entrenamientos, elaborar los scripts de medición, organizar el repositorio y redactar un borrador de este documento. Revisé el código línea por línea, verifiqué las cifras contra los archivos de `resultados/` y asumo la responsabilidad por el contenido. Los dos esquemas de la sección 4 son dibujos hechos a mano por mí, sin intervención de IA.
+Usé un asistente de IA como apoyo para programar las soluciones de los ejercicios, ejecutar los entrenamientos, elaborar los scripts de medición, organizar el repositorio y redactar un borrador de este documento. Revisé el código línea por línea, verifiqué las cifras contra los archivos de `resultados/` y asumo la responsabilidad por el contenido. Los dos esquemas de la sección 4 los elaboré yo: usé guías de estudio generadas con IA para verificar el contenido y luego los dibujé por mi cuenta, primero a mano y después en Excalidraw.
 
 ## 10. Cómo citar
 
