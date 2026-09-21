@@ -194,33 +194,19 @@ Una primera versión de la corrección falló y la dejo registrada. Repetía la 
 
 ## 4. Esquemas de entrenamiento (dibujos propios)
 
-Los dos esquemas son de mi autoría. Primero los dibujé a mano y después los pasé a limpio en Excalidraw; debajo de cada uno dejo la foto del borrador del que salió. Para verificar que no faltara ningún paso me apoyé en guías de estudio, como explico en la sección 9.
+Los dos esquemas son de mi autoría. Primero los dibujé a mano y después los pasé a limpio en Excalidraw. Para verificar que no faltara ningún paso me apoyé en guías de estudio, como explico en la sección 9.
 
 ### Q-Learning tabular
 
 El ciclo es estado → acción → recompensa → actualización. La observación se discretiza para obtener el estado, se elige la acción con ε-greedy, el entorno devuelve la recompensa y el siguiente estado, se calcula el objetivo TD y se actualiza la tabla. La flecha de la izquierda cierra el ciclo mientras el episodio continúa.
 
-![Esquema propio del ciclo de entrenamiento de Q-Learning tabular](esquemas/esquema_qlearning.png)
-
-<details>
-<summary>Borrador a mano</summary>
-
-![Borrador a mano del esquema de Q-Learning](esquemas/borrador_qlearning.jpg)
-
-</details>
+![Esquema propio del ciclo de entrenamiento de Q-Learning tabular](esquemas/ciclo_de_entrenamiento_de_q_learning_tabular.png)
 
 ### DQN
 
 Son dos bucles que se encuentran en la memoria de repetición (replay). En el de interacción, la red en línea elige la acción y cada transición se guarda en la memoria. En el de aprendizaje, un mini-lote al azar pasa por la red objetivo (target) para formar el objetivo de Bellman, y la pérdida actualiza solo los pesos de la red en línea. Cada 10 episodios esos pesos se copian a la red objetivo.
 
-![Esquema propio del ciclo de entrenamiento de DQN](esquemas/esquema_dqn.png)
-
-<details>
-<summary>Borrador a mano</summary>
-
-![Borrador a mano del esquema de DQN](esquemas/borrador_dqn.jpg)
-
-</details>
+![Esquema propio del ciclo de entrenamiento de DQN](esquemas/ciclo_de_entrenamiento_de_dqn.png)
 
 ## 5. Mejor resultado de Q-Learning
 
@@ -313,7 +299,7 @@ El costo restante, −max Q(s, a), es la cantidad de pasos que el agente cree qu
 │   ├── metricas/                # historial por episodio (CSV) y resúmenes (JSON)
 │   └── registros/               # salidas de consola de cada corrida
 ├── saves/                       # agentes entrenados (mejor punto de control de cada uno)
-├── esquemas/                    # esquemas propios de los dos ciclos y sus borradores a mano
+├── esquemas/                    # esquemas propios de los dos ciclos de entrenamiento
 └── docs/
     ├── tarjetas_de_modelo.md        # ficha de cada agente: datos, resultado, límites
     ├── lista_de_reproducibilidad.md # qué se puede reproducir y dónde está la evidencia
