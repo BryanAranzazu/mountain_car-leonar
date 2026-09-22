@@ -12,7 +12,7 @@
 
 **Exploración persistente en un entorno de recompensa plana.** Taller 1 de la Unidad 2, curso Simulación y Aprendizaje por Refuerzo, Maestría en Inteligencia Artificial, Universidad de La Sabana (Chía, Colombia), periodo 2026-5.
 
-Autor: Leonar Socarrás Molina (leonarsomo@unisabana.edu.co, ORCID [0000-0003-0601-9151](https://orcid.org/0000-0003-0601-9151)). Docente: Emilio Muñoz Pérez. Repositorio base: [emiliomunozai/mountain_car](https://github.com/emiliomunozai/mountain_car).
+Autores: Leonar Socarrás Molina (leonarsomo@unisabana.edu.co, John Jairo Serrano Cifuentes (johnseci@unisabana.edu.co , ORCID [0000-0003-0601-9151](https://orcid.org/0000-0003-0601-9151)). Docente: Emilio Muñoz Pérez. Repositorio base: [emiliomunozai/mountain_car](https://github.com/emiliomunozai/mountain_car).
 
 ## Resumen
 
