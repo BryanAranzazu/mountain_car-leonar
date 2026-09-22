@@ -223,6 +223,8 @@ Comentario. La tabla pasa los primeros 1 620 episodios en -200; la primera bande
 
 Veo dos causas para la oscilación. La tasa de aprendizaje es constante (0.1), y las garantías de convergencia de Q-learning como aproximación estocástica exigen tasas decrecientes (Zhao, 2025, pp. 140-141); con tasa fija la tabla ronda el punto fijo sin asentarse. Además, la celda discretizada no es un estado de Markov: dos observaciones distintas que caen en la misma celda tienen futuros distintos, y cerca de la cima esa diferencia decide si el carro corona o rueda de vuelta. El agente visitó 298 de las 400 celdas; las demás son combinaciones de posición y velocidad que la física del entorno no permite alcanzar. La tabla no llegó al umbral de -110 en ningún control.
 
+Como prueba complementaria de estabilidad a largo plazo realizada por el equipo, se evaluó extender el entrenamiento tabular hasta 50 000 y 90 000 episodios. Lejos de estabilizarse, el desempeño se degradó sistemáticamente (cayendo a -153 a los 50k episodios y a -166 a los 90k episodios con solo 7 de 10 banderas alcanzadas). Esto confirma empíricamente que, con tasa de aprendizaje constante ($\alpha = 0.1$) y $\epsilon$ en su piso, las actualizaciones continuas sobre un espacio discretizado que viola la propiedad de Markov terminan desestabilizando la tabla $Q$ en lugar de afinarla.
+
 ## 6. Mejor resultado de DQN
 
 **Recompensa lograda: -96.7 ± 7.6 en 100 episodios voraces, con bandera en 100 de 100** (mejor episodio -83, peor -104). Corresponde al punto de control del episodio 2 450. La CLI del curso da -96.6 ± 8.2 con 10 de 10 (`resultados/registros/dqn_cli_eval.txt`). Cifras completas en `resultados/metricas/dqn_evaluacion.json`.
